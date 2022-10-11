@@ -9,6 +9,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Ernesto är bäst
-        // bara så du vet
+        // bara
     }
 }
