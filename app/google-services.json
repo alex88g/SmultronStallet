@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "627076489877",
+    "project_id": "smultronstalletdatabase",
+    "storage_bucket": "smultronstalletdatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627076489877:android:31bc441cc14916dd9f719c",
+        "android_client_info": {
+          "package_name": "com.example.smultronstallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627076489877-fuqdcmdah432lk6afl3ec06238u2a77o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKqDGt_AWGnxkhBG8UFbwLLnX_R9ao15o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627076489877-fuqdcmdah432lk6afl3ec06238u2a77o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
