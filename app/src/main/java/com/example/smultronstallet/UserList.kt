@@ -1,6 +1,6 @@
 package com.example.smultronstallet
 
-class UserList {
+class UserList() {
     var users = mutableListOf<User>()
     init {
         createUsers()
@@ -10,8 +10,5 @@ class UserList {
             var randomAge = (12..100).random()
             users.add(User("user$i",randomAge))
         }
-
-
     }
-
 }

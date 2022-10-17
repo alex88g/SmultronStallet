@@ -1,6 +1,6 @@
 package com.example.smultronstallet
 
-class PlaceList() {
+class PlaceList {
     var placeList = mutableListOf<Place>()
 
     init {
@@ -32,7 +32,7 @@ class PlaceList() {
         placeList.add(Place("Sushi Yama", 59.30931, 18.02232,3.2))
         placeList.add(Place("Thai Rung Restaurang", 59.31046, 18.02226,3.9))
         placeList.add(Place("Café Trekantsparken", 59.31041, 18.02164,5.0))
-        placeList.add(Place("Naked Juicebar", 59.30947, 18.02193,3,0))
+        placeList.add(Place("Naked Juicebar", 59.30947, 18.02193,3.0))
         placeList.add(Place("Espresso House", 59.30964, 18.02174,3.7))
         placeList.add(Place("Brillo Pizza", 59.30999, 18.02184,3.8))
         placeList.add(Place("Pizzeria Di Metro", 59.31014, 18.02205,3.0))
