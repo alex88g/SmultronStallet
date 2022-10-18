@@ -1,19 +1,25 @@
 package com.example.smultronstallet
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 
- lateinit var list:MapList
 
 class MainActivity : AppCompatActivity() {
+   private var layoutManager: RecyclerView.LayoutManager?= null
+    private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // lista till map
+        var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
-       Log.d("!!!", "${list.latitude}")
 
+        recyclerView.adapter =RecyclerAdapter()
 
        }
+
 }
