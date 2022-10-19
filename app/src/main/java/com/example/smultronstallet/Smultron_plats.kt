@@ -1,4 +1,5 @@
 package com.example.smultronstallet
 
-class SmultronPlats(name:String, location:String, image:Int ) {
+class SmultronPlats(var name:String, var review :String, var image:Int ) {
+
 }
