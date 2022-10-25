@@ -37,7 +37,7 @@ class DatabaseActivity : AppCompatActivity() {
 
     }
     fun getList(myCallback :(MutableList<User>) -> Unit) {
-        db.collection("user")
+        db.collection("users")
             .get()
             .addOnCompleteListener {
                 if(it.isSuccessful){

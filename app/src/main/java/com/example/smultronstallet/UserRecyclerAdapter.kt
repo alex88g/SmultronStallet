@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class UserRecyclerAdapter (private val context: Context, val users: MutableList<User>) :
+class UserRecyclerAdapter (private val context: Context, private val users: MutableList<User>) :
                     RecyclerView.Adapter<UserRecyclerAdapter.ViewHolder>(){
 
     val layoutInflater = LayoutInflater.from(context)
