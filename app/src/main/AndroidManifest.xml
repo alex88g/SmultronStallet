@@ -15,6 +15,13 @@
         android:theme="@style/Theme.SmultronStallet"
         tools:targetApi="31">
         <activity
+            android:name=".userNewActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".UserShowOnClickActivity"
             android:exported="false">
             <meta-data

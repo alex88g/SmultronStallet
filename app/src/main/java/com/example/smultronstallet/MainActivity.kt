@@ -28,7 +28,7 @@ class MainActivity() : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         recyclerView.setBackgroundColor(Color.BLACK)
 
-
+        var list = SmultronList().listSmultronPerson[5]
         button = findViewById(R.id.buttonMap)
         button.setOnClickListener {
 
@@ -43,9 +43,6 @@ class MainActivity() : AppCompatActivity() {
 
 
         }
-
-
-
         var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -55,22 +52,25 @@ class MainActivity() : AppCompatActivity() {
         recyclerView.adapter =adapter
         adapter.setOnItemClickListener(object: RecyclerAdapter.onItemClicklisterner {
             override fun onItemClick(position: Int) {
-             //  Toast.makeText(this@MainActivity,"you clicked on item ${position}", Toast.LENGTH_LONG).show()
+                //  Toast.makeText(this@MainActivity,"you clicked on item ${position}", Toast.LENGTH_LONG).show()
 
-
-                val intent= Intent(this@MainActivity,UserShowOnClickActivity::class.java)
+                val intent= Intent(this@MainActivity,userNewActivity::class.java)
 
                 startActivity(intent)
+
+
             }
 
         })
 
 
 
-            }
-
-
     }
+
+
+}
+
+
 
 
 

@@ -15,6 +15,7 @@ class RecyclerAdapter():RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             fun onItemClick(position: Int)
         }
     fun setOnItemClickListener(listener: onItemClicklisterner){
+
         mListener = listener
     }
 
@@ -72,7 +73,9 @@ class RecyclerAdapter():RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             itemTitle = itemView.findViewById(R.id.item_title)
             itemDetail = itemView.findViewById(R.id.item_detail)
 
-
+            itemView.setOnClickListener {
+                listener.onItemClick(absoluteAdapterPosition)
+            }
 
         }
     }
