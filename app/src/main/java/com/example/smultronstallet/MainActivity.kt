@@ -16,10 +16,6 @@ import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
-
-
-    //private var layoutManager: RecyclerView.LayoutManager? = null
-   // private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
     val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {

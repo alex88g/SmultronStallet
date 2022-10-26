@@ -11,8 +11,6 @@ import com.google.firebase.ktx.Firebase
 
 class DatabaseActivity : AppCompatActivity() {
 
-   //private var layoutManager: RecyclerView.LayoutManager?= null
-   //private var adapter: RecyclerView.Adapter<UserRecyclerAdapter.ViewHolder>?=null
     val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,18 +21,9 @@ class DatabaseActivity : AppCompatActivity() {
             var recyclerView = findViewById<RecyclerView>(R.id.userRecyclerView)
             recyclerView.layoutManager = LinearLayoutManager(this)
 
-            // skapade vi en adapter från vår adapter-klass och skickar med vår lista av personer
             val adapter = UserRecyclerAdapter(this,it)
-
-            // koppla ihop vår adapter med recyclerviewn
             recyclerView.adapter = adapter
-
-
-            // skapa adapter
-            // koppla data (users) till adapter
-            // Koppla adapter till rcycleview
         }
-
     }
     fun getList(myCallback :(MutableList<User>) -> Unit) {
         db.collection("users")
@@ -50,11 +39,9 @@ class DatabaseActivity : AppCompatActivity() {
                     }
                     myCallback(list)
                 }
-
             }
             .addOnFailureListener { exception ->
                 Log.d(ContentValues.TAG, "error gettingdocuments: ", exception)
             }
-
     }
 }

@@ -24,7 +24,6 @@ class RecyclerAdapter(private val context : Context, val places: MutableList<Pla
         return ViewHolder(itemView)
     }
 
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int ){
         Log.d("!!!", "onBindViewHolder")
         val place = places[position]
@@ -47,11 +46,7 @@ class RecyclerAdapter(private val context : Context, val places: MutableList<Pla
         return places.size
     }
 
-
-
     inner class ViewHolder (itemView: View): RecyclerView.ViewHolder(itemView) {
-
-
         var itemImage = itemView.findViewById<ImageView>(R.id.item_image)
         var itemTitle = itemView.findViewById<TextView>(R.id.item_title)
         var itemDetail = itemView.findViewById<TextView>(R.id.item_detail)

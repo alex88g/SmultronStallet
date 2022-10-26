@@ -13,7 +13,7 @@
         android:theme="@style/Theme.SmultronStallet"
         tools:targetApi="31">
         <activity
-            android:name=".DatabaseActivity"
+            android:name=".MainActivity"
             android:exported="false"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
@@ -22,7 +22,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".DatabaseActivity"
             android:exported="true"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
