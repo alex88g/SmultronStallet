@@ -4,74 +4,44 @@ import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class DatabaseActivity : AppCompatActivity() {
 
-    val userList = UserList()
-    val placeList = PlaceList()
+    val db = Firebase.firestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_database)
-        val db = Firebase.firestore
 
-        // Create a new user with a first and last name
-        for (user in userList.users) {
+        getList {
+            var recyclerView = findViewById<RecyclerView>(R.id.userRecyclerView)
+            recyclerView.layoutManager = LinearLayoutManager(this)
 
-            db.collection("users")
-                .add(user)
-                .addOnSuccessListener { documentReference ->
-                    Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-                }
-                .addOnFailureListener { e ->
-                    Log.w(ContentValues.TAG, "Error adding document", e)
-                }
-
-
+            val adapter = UserRecyclerAdapter(this,it)
+            recyclerView.adapter = adapter
         }
-        for(place in placeList.placeList) {
-
-            db.collection("places")
-                .add(place)
-                .addOnSuccessListener { documentReference ->
-                    Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+    }
+    fun getList(myCallback :(MutableList<User>) -> Unit) {
+        db.collection("users")
+            .get()
+            .addOnCompleteListener {
+                if(it.isSuccessful){
+                    val list = mutableListOf<User>()
+                    for (document in it.result){
+                        val name = document.data["name"].toString()
+                        val age = document.data["age"].toString().toInt()
+                        val item = User(name = name, age = age)
+                        list.add(item)
+                    }
+                    myCallback(list)
                 }
-                .addOnFailureListener { e ->
-                    Log.w(ContentValues.TAG, "Error adding document", e)
-                }
-
-        }
-
-
-// Add a new document with a generated ID
-//
-//       // Create a new user with a first, middle, and last name
-//       val user = hashMapOf(
-//           "first" to "Alan",
-//           "middle" to "Mathison",
-//           "last" to "Turing",
-//           "born" to 1912
-//       )
-
-/// Add a new document with a generated ID
-//       db.collection("users")
-//           .add(user)
-//           .addOnSuccessListener { documentReference ->
-//               Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//           }
-//           .addOnFailureListener { e ->
-//               Log.w(ContentValues.TAG, "Error adding document", e)
-//           }
-//       db.collection("users")
-//           .get()
-//           .addOnSuccessListener { result ->
-//               for (document in result) {
-//                   Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
-//               }
-//           }
-//           .addOnFailureListener { exception ->
-//               Log.w(ContentValues.TAG, "Error getting documents.", exception)
-//           }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(ContentValues.TAG, "error gettingdocuments: ", exception)
+            }
     }
 }
