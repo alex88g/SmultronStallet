@@ -17,12 +17,15 @@ import com.google.firebase.ktx.Firebase
 class RecyclerAdapter(private val context : Context, val places: MutableList<Place>) :
                 RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
+
     val layoutInflater = LayoutInflater.from(context)
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = layoutInflater.inflate(R.layout.card_layout,parent,false)
         return ViewHolder(itemView)
     }
+
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int ){
         Log.d("!!!", "onBindViewHolder")
