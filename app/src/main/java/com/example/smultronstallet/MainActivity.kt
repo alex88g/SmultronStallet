@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import android.content.ContentValues.TAG
+import android.util.Log
+import androidx.core.content.ContextCompat.startActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recyclerView.setBackgroundColor(Color.BLACK)
+        button = findViewById(R.id.buttonMap)
 
 
             getList {
@@ -40,6 +43,20 @@ class MainActivity : AppCompatActivity() {
 
                 recyclerView.adapter = RecyclerAdapter(this,it)
             }
+        //button listner till kartan
+        button.setOnClickListener {
+
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
+
+
+            fun openNextActivity(view: View) {
+                val intent = Intent(this, MapsActivity::class.java)
+                startActivity(intent)
+            }
+
+
+        }
     }
 
     fun getList(myCallback :(MutableList<Place>) -> Unit) {
@@ -63,46 +80,34 @@ class MainActivity : AppCompatActivity() {
             }
 
     }
-}
+
 
         //var list = SmultronList().listSmultronPerson[5]
-        button = findViewById(R.id.buttonMap)
-        button.setOnClickListener {
-
-            val intent = Intent(this, MapsActivity::class.java)
-            startActivity(intent)
 
 
-            fun openNextActivity(view: View) {
-                val intent = Intent(this, MapsActivity::class.java)
-                startActivity(intent)
-            }
-
-
-        }
         //var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         //recyclerView.layoutManager = LinearLayoutManager(this)
 
 
 
-        //var adapter =RecyclerAdapter()
-        //recyclerView.adapter =adapter
-        //adapter.setOnItemClickListener(object: RecyclerAdapter.onItemClicklisterner {
-            override fun onItemClick(position: Int) {
-                //  Toast.makeText(this@MainActivity,"you clicked on item ${position}", Toast.LENGTH_LONG).show()
+       //var adapter =RecyclerAdapter()
+       //recyclerView.adapter =adapter
+       //adapter.setOnItemClickListener(object: RecyclerAdapter.onItemClicklisterner {
+       //    override fun onItemClick(position: Int) {
+       //        //  Toast.makeText(this@MainActivity,"you clicked on item ${position}", Toast.LENGTH_LONG).show()
 
-                val intent= Intent(this@MainActivity,userNewActivity::class.java)
+       //        val intent= Intent(this@MainActivity,userNewActivity::class.java)
 
-                startActivity(intent)
+       //        startActivity(intent)
 
 
-            }
+       //    }
 
-        })
+       //})
 
 
 
     }
 
 
-}
+
