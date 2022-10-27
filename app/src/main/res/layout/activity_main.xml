@@ -6,45 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="375dp"
-        android:layout_height="409dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="132dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonMap"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.729" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
 
-    <Button
-        android:id="@+id/buttonMap"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:drawable/ic_dialog_map"
-        android:backgroundTint="#911313"
-        android:onClick="openNextActivity"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DC648C"
+        app:itemIconTint="#fff"
+        app:itemTextColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#730808"
+        android:background="#E6730808"
         android:backgroundTint="#730808"
         android:gravity="center"
         android:text="Välkommen till smulltronstället"
-        android:textColor="#000000"
+        android:textColor="#DC648C"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,27 +38,48 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
-    <Button
-        android:id="@+id/buttonSearch"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:drawable/ic_search_category_default"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="48dp"
+        android:id="@+id/buttonLog"
+        android:layout_width="105dp"
         android:layout_height="48dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/hombtn"
+        android:layout_marginBottom="96dp"
+        android:background="#CD730808"
+        android:text="Login"
+        android:textColor="#DC648C"
+        android:textSize="16sp"
+        app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+
+        android:id="@+id/fragment_container"
+        android:layout_width="413dp"
+        android:layout_height="610dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0">
+
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="396dp"
+        android:layout_height="130dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

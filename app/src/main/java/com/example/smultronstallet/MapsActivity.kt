@@ -31,8 +31,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
 
 
-
-
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -107,7 +105,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         //Add a marker in Stockholm and move the camera
-        val stockholm = LatLng(59.305998776, 18.020166586)
+        val stockholm = LatLng(59.3109, 18.0298)
         mMap.addMarker(MarkerOptions().position(stockholm).title("Marker in Stockholm"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(stockholm))
 
