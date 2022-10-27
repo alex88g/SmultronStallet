@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         button = findViewById<Button>(R.id.buttonLog)
 
         recyclerView.setBackgroundColor(Color.BLACK)
-        button = findViewById(R.id.buttonMap)
+        //button = findViewById(R.id.buttonMap)
 
 
             getList {
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-    }
+
 
     fun getList(myCallback :(MutableList<Place>) -> Unit) {
         db.collection("places")
