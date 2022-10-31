@@ -29,6 +29,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
         // sätt in den personens uppgifter i vår view
         holder.nameTextView.text = user.name
         holder.ageTextView.text = user.age.toString()
+        holder.emailTextView.text = user.email
         // Här lägger vi imageURL
         //var imageUrl = currentItem.imageURL
 
@@ -52,6 +53,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
         // (vår itemview är skapad utifrån vår list_item layout
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
         var ageTextView = itemView.findViewById<TextView>(R.id.ageTextView)
+        var emailTextView = itemView.findViewById<TextView>(R.id.emailTextView)
 
     }
 }
