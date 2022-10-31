@@ -2,7 +2,7 @@ package com.example.smultronstallet
 
 
 
-import androidx.fragment.app.Fragment
+
 import fragment.HomeFragment
 import fragment.MapsFragment
 import fragment.ProfileFragment
@@ -11,14 +11,15 @@ import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.view.View
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import android.content.ContentValues.TAG
-import android.util.Log
 import androidx.core.content.ContextCompat.startActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -49,21 +50,18 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(homeFragment)
 
 
+        
+
+//        getList {
+//
+//            var recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+//            recyclerView.layoutManager = LinearLayoutManager(this)
+//
+//            recyclerView.adapter = RecyclerAdapter(this,it)
+//        }
+
+   
         button = findViewById<Button>(R.id.buttonLog)
-
-        recyclerView.setBackgroundColor(Color.BLACK)
-        //button = findViewById(R.id.buttonMap)
-
-
-            getList {
-
-                var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-                recyclerView.layoutManager = LinearLayoutManager(this)
-
-                recyclerView.adapter = RecyclerAdapter(this,it)
-            }
-        //button listner till kartan
-
         button.setOnClickListener {
 
             val intent = Intent(this, SignInActivity::class.java)
@@ -88,34 +86,33 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
-               // val intent = Intent(this, MapsActivity::class.java)
-               // startActivity(intent)
-           // }
 
 
-        }
-
-
-    fun getList(myCallback :(MutableList<Place>) -> Unit) {
-        db.collection("places")
-            .get()
-            .addOnCompleteListener {
-                if(it.isSuccessful){
-                    val list = mutableListOf<Place>()
-                    for (document in it.result){
-                        val name = document.data["name"].toString()
-                        val review = document.data["review"].toString().toDouble()
-                        val item = Place(name = name,review = review)
-                        list.add(item)
-                    }
-                myCallback(list)
-            }
-
-            }
-            .addOnFailureListener { exception ->
-                Log.d(ContentValues.TAG, "error gettingdocuments: ", exception)
-            }
     }
+
+
+//    fun getList(myCallback :(MutableList<Place>) -> Unit) {
+//        db.collection("places")
+//            .get()
+//            .addOnCompleteListener {
+//                if(it.isSuccessful){
+//                    val list = mutableListOf<Place>()
+//                    for (document in it.result){
+//                        val name = document.data["name"].toString()
+//                        val review = document.data["review"].toString().toDouble()
+//                        val item = Place(name = name,review = review)
+//                        list.add(item)
+//                    }
+//                    myCallback(list)
+//                }
+//
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.d(ContentValues.TAG, "error gettingdocuments: ", exception)
+//            }
+//    }
+
+
     fun replaceFragment(fragment: Fragment) {
         if (fragment != null){
             val transaction = supportFragmentManager.beginTransaction()

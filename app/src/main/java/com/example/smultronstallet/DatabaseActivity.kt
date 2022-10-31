@@ -34,7 +34,10 @@ class DatabaseActivity : AppCompatActivity() {
                     for (document in it.result){
                         val name = document.data["name"].toString()
                         val age = document.data["age"].toString().toInt()
-                        val item = User(name = name, age = age)
+
+                        val email = document.data["email"].toString()
+                        val item = User(name = name, email = email, age = age)
+
                         list.add(item)
                     }
                     myCallback(list)

@@ -16,7 +16,9 @@ import com.google.firebase.ktx.Firebase
 
 
 class RecyclerAdapter(private val context : Context, val places: MutableList<Place>) :
-                RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
+    RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
 
 
     val layoutInflater = LayoutInflater.from(context)
@@ -55,5 +57,6 @@ class RecyclerAdapter(private val context : Context, val places: MutableList<Pla
         var itemTitle = itemView.findViewById<TextView>(R.id.item_title)
         var itemDetail = itemView.findViewById<TextView>(R.id.item_detail)
     }
+
 }
 
