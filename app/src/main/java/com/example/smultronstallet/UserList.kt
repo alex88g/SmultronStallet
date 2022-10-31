@@ -5,6 +5,7 @@ class UserList() {
   // init {
   //     createUsers()
   // }
+  //add
     fun createUsers() {
         for(i in 1..100){
             var randomAge = (12..100).random()
