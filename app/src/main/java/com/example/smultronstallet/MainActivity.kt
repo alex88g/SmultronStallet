@@ -2,11 +2,15 @@ package com.example.smultronstallet
 
 
 
+import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import fragment.HomeFragment
@@ -37,6 +41,13 @@ class MainActivity : AppCompatActivity() {
 
 
 
+//        getList {
+//
+//            var recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+//            recyclerView.layoutManager = LinearLayoutManager(this)
+//
+//            recyclerView.adapter = RecyclerAdapter(this,it)
+//        }
 
         button = findViewById<Button>(R.id.buttonLog)
 
@@ -60,8 +71,29 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+
     }
 
+//    fun getList(myCallback :(MutableList<Place>) -> Unit) {
+//        db.collection("places")
+//            .get()
+//            .addOnCompleteListener {
+//                if(it.isSuccessful){
+//                    val list = mutableListOf<Place>()
+//                    for (document in it.result){
+//                        val name = document.data["name"].toString()
+//                        val review = document.data["review"].toString().toDouble()
+//                        val item = Place(name = name,review = review)
+//                        list.add(item)
+//                    }
+//                    myCallback(list)
+//                }
+//
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.d(ContentValues.TAG, "error gettingdocuments: ", exception)
+//            }
+//    }
 
     fun replaceFragment(fragment: Fragment) {
         if (fragment != null) {
