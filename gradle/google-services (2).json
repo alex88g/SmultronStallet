@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "941406720153",
+    "project_id": "firestoreintro-c0435",
+    "storage_bucket": "firestoreintro-c0435.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941406720153:android:eb36da8f4c42310eb46808",
+        "android_client_info": {
+          "package_name": "com.example.firestoreintro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941406720153-pk6vv7qkdutbo7ldqtfau6nv2m94jq32.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfEyxuDb53RsKD3wm2oYe5ciGAIDjqp5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941406720153-pk6vv7qkdutbo7ldqtfau6nv2m94jq32.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941406720153:android:85b49c66c83afd70b46808",
+        "android_client_info": {
+          "package_name": "com.example.smultronstallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941406720153-pk6vv7qkdutbo7ldqtfau6nv2m94jq32.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfEyxuDb53RsKD3wm2oYe5ciGAIDjqp5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941406720153-pk6vv7qkdutbo7ldqtfau6nv2m94jq32.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
