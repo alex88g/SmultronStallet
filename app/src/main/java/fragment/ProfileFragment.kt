@@ -8,22 +8,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.smultronstallet.R
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_review.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 
-class ReviewFragment : Fragment() {
-
+class ProfileFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_review, container, false)
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-            Toast.makeText(context, "Welcome to Review!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Welcome to profile!", Toast.LENGTH_SHORT).show()
         }
     }

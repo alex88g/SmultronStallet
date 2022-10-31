@@ -9,14 +9,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class UserRecyclerAdapter (private val context: Context, private val users: MutableList<User>) :
+
     RecyclerView.Adapter<UserRecyclerAdapter.ViewHolder>(){
+
 
     val layoutInflater = LayoutInflater.from(context)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = layoutInflater.inflate(R.layout.userlist_item, parent, false)
         Log.d("!!!Adapter", "oncreateViewholder")
-//add
+
         return ViewHolder(itemView)
     }
 
@@ -30,6 +32,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
         holder.nameTextView.text = user.name
         holder.ageTextView.text = user.age.toString()
         holder.emailTextView.text = user.email
+
         // Här lägger vi imageURL
         //var imageUrl = currentItem.imageURL
 
@@ -54,6 +57,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
         var ageTextView = itemView.findViewById<TextView>(R.id.ageTextView)
         var emailTextView = itemView.findViewById<TextView>(R.id.emailTextView)
+
 
     }
 }

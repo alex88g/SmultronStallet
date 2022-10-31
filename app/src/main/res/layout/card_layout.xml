@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_View"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
+
+
     app:cardCornerRadius="12dp"
     app:cardElevation="3dp"
     app:contentPadding="4dp">
@@ -14,7 +17,9 @@
         android:id="@+id/deltaRelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:padding="16dp">
+
 
         <ImageView
             android:id="@+id/item_image"
