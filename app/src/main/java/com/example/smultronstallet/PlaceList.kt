@@ -12,6 +12,7 @@ class PlaceList {
     val db = Firebase.firestore
 
     fun createPlaces() {
+
         placeList.add(Place("Brödernas", 59.30696, 18.03324,4.0,""))
         placeList.add(Place("MGL Sushi", 59.30722, 18.02694,4.3,""))
         placeList.add(Place("Sjöviks pizzeria", 59.30707, 18.02926,4.0,""))
@@ -43,5 +44,6 @@ class PlaceList {
         placeList.add(Place("Boulebar", 59.31282, 18.027,4.2,""))
         placeList.add(Place("Café Rosteriet", 59.31198, 18.02396,4.0,""))
         placeList.add(Place("Chong Qing", 59.31294, 18.02849,4.2,"https://firebasestorage.googleapis.com/v0/b/smultronstalletdatabase.appspot.com/o/bild_2022-10-25_221227351.png?alt=media&token=848af126-5c22-4f52-bacf-7a8e8a16c41a"))
+
     }
 }

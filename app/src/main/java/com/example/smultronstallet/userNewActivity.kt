@@ -15,7 +15,9 @@ class userNewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_new)
 
+
         image = thai
+
         textView = textView2
         review1
 

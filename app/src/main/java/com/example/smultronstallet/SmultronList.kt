@@ -10,6 +10,7 @@ import com.google.firebase.ktx.Firebase
 class SmultronList () {
     var listSmultronPerson = mutableListOf<SmultronPlats>()
     val db = Firebase.firestore
+
     init {
 
 
@@ -35,6 +36,8 @@ class SmultronList () {
 
 
 
+
+
                     Log.d(TAG, "${document.id} => ${document.data}")
                 }
             }
@@ -48,3 +51,4 @@ class SmultronList () {
 
 
 }
+
