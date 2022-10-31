@@ -16,6 +16,11 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
+
+import android.os.Looper
+import android.util.Log
+import com.google.android.gms.location.*
+
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
@@ -24,12 +29,36 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     lateinit var currentLocation: Location
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 
+    private val REQUEST_LOCATION = 1
+    lateinit var locationProvider: FusedLocationProviderClient
+    lateinit var locationCallback: LocationCallback
+    lateinit var locationRequest: LocationRequest
 
-    val permissionCode = 101
+
+  //  val permissionCode = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        locationProvider = LocationServices.getFusedLocationProviderClient(this)
+        locationRequest = createLocationRequest()
+        locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult) {
+                for (location in locationResult.locations) {
+                    Log.d("!!!", "lat: ${location.latitude}, lng: ${location.longitude}")
+                }
+            }
+        }
+
+        //locationProvider.requestLocationUpdates(locationRequest,locationCallback, Looper.getMainLooper())
+
+        if( ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+            != PackageManager.PERMISSION_GRANTED ) {
+            ActivityCompat.requestPermissions(this,
+                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                REQUEST_LOCATION
+            )
+        }
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -39,23 +68,21 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
 
-        getCurrentLocationUser()
-
-    }
-
-    private fun getCurrentLocationUser() {
-        if (ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_FINE_LOCATION)!=
-            PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,android.Manifest.
-            permission.ACCESS_COARSE_LOCATION)!=
-            PackageManager.PERMISSION_GRANTED) {
-
-
-            ActivityCompat.requestPermissions(this,
-                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),permissionCode)
-            return
-
-        }
-
+//        getCurrentLocationUser()
+//
+//    }
+//
+//    private fun getCurrentLocationUser() {
+//        if (ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_FINE_LOCATION)
+//            != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,android.Manifest.
+//            permission.ACCESS_COARSE_LOCATION)!=
+//            PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(this,
+//                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),permissionCode)
+//            return
+//
+//        }
+//
         val getLocation= fusedLocationProviderClient.lastLocation.addOnSuccessListener {
 
                 location ->
@@ -75,19 +102,29 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray,
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when(requestCode){
-
-            permissionCode -> if (grantResults.isNotEmpty() && grantResults[0]==
-                PackageManager.PERMISSION_GRANTED){
-
-                getCurrentLocationUser()
-            }
+//    override fun onRequestPermissionsResult(
+//        requestCode: Int,
+//        permissions: Array<out String>,
+//        grantResults: IntArray,
+//    ) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+//        when(requestCode){
+//
+//            permissionCode -> if (grantResults.isNotEmpty() && grantResults[0]==
+//                PackageManager.PERMISSION_GRANTED){
+//
+//                getCurrentLocationUser()
+//            }
+            override fun onRequestPermissionsResult(
+                requestCode: Int,
+                permissions: Array<out String>,
+        grantResults: IntArray
+                ) {
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+                if (requestCode == REQUEST_LOCATION) {
+                    if( grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                        startLocationUpdates()
+                    }
         }
     }
 
@@ -109,5 +146,49 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(stockholm).title("Marker in Stockholm"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(stockholm))
 
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        startLocationUpdates()
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        stopLocationUpdates()
+    }
+
+
+    fun createLocationRequest() =
+        LocationRequest.create().apply {
+            interval = 2000
+            fastestInterval = 1000
+            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        }
+
+
+//    fun createLocationRequest() : LocationRequest {
+//        val request = LocationRequest.create()
+//        request.interval = 2000
+//        request.fastestInterval = 1000
+//        request.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+//
+//        return request
+//    }
+
+    fun stopLocationUpdates() {
+        locationProvider.removeLocationUpdates(locationCallback)
+    }
+
+
+    fun startLocationUpdates() {
+        if( ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+            == PackageManager.PERMISSION_GRANTED ) {
+            Log.d("!!!", "startlocationUpdates")
+            locationProvider.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper())
+        }
     }
 }
