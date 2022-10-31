@@ -16,7 +16,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = layoutInflater.inflate(R.layout.userlist_item, parent, false)
         Log.d("!!!Adapter", "oncreateViewholder")
-
+//add
         return ViewHolder(itemView)
     }
 
