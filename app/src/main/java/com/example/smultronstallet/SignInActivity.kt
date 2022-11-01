@@ -52,7 +52,16 @@ class SignInActivity : AppCompatActivity() {
 
 
         binding.textView.setOnClickListener {
+            val business : Boolean = false
             val intent = Intent(this, SignUpActivity::class.java)
+            intent.putExtra("business",business)
+            startActivity(intent)
+
+        }
+        binding.BusinessTextView.setOnClickListener {
+            val business : Boolean = true
+            val intent = Intent(this, SignUpActivity::class.java)
+            intent.putExtra("business",business)
             startActivity(intent)
 
         }
@@ -65,7 +74,7 @@ class SignInActivity : AppCompatActivity() {
 
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        val intent = Intent(this, SignInActivity::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
@@ -78,7 +87,7 @@ class SignInActivity : AppCompatActivity() {
 
             fun checkIfUserIsLogged() {
                 if (auth.currentUser != null) {
-                    startActivity(Intent(this, SignInActivity::class.java))
+                    startActivity(Intent(this, MainActivity::class.java))
                     finish()
 
                 }
