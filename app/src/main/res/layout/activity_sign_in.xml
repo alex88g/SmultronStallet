@@ -5,7 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/smultronstallet_background"
-    tools:context=".SignInActivity">
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/BusinessTextView"
+        android:layout_width="360dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Business account here!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignin"
+        app:layout_constraintVertical_bias="0.857" />
 
     <EditText
         android:id="@+id/emailEt"
@@ -16,8 +36,10 @@
         android:layout_marginEnd="30dp"
         android:drawableStart="@drawable/ic_email"
         android:ems="10"
-        android:hint="    type your email"
+        android:hint="type your email"
         android:inputType="textEmailAddress"
+        android:imeOptions="actionDone"
+        android:gravity="center"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -32,8 +54,10 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:drawableStart="@drawable/ic_lock"
-        android:hint="    type_your_password"
+        android:hint="type_your_password"
         android:inputType="textPassword"
+        android:imeOptions="actionDone"
+        android:gravity="center"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
