@@ -41,17 +41,6 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.buttonSignout.setOnClickListener {
-            auth.signOut()
-            startActivity(
-                Intent(
-                    this,
-                    SignInActivity::class.java))
-            startActivity(intent)
-        }
-
-
-
         binding.textView.setOnClickListener {
             val business : Boolean = false
             val intent = Intent(this, SignUpActivity::class.java)
@@ -84,22 +73,6 @@ class SignInActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Empty fields are not allowed!", Toast.LENGTH_SHORT).show()
 
-            }
-
-            fun checkIfUserIsLogged() {
-                if (auth.currentUser != null) {
-                    startActivity(Intent(this, MainActivity::class.java))
-                    finish()
-
-                }
-
-            }
-            if (auth.currentUser != null) {
-                auth.currentUser?.let {
-                    binding.textCheckLog.text = it.email
-                }
-
-                checkIfUserIsLogged()
             }
         }
     }
