@@ -44,7 +44,7 @@ class SignUpActivity : AppCompatActivity() {
             emailEt.hint = "Business eMail"
             textView3.text = "Register your Business"
 
-            signup.setBackgroundResource(R.drawable.smul_back)
+            signup.setBackgroundResource(R.drawable.smultronstallet_background)
 
         }
 

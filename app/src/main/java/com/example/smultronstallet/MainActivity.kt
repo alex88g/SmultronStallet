@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        button = findViewById<Button>(R.id.buttonLog)
+        button = findViewById(R.id.buttonLog)
 
         button.setOnClickListener {
 
