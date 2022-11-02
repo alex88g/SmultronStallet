@@ -67,8 +67,8 @@ class SignInActivity : AppCompatActivity() {
         }
 
         binding.buttonSignin.setOnClickListener {
-            val email = binding.emailEt.toString()
-            val password = binding.passET.toString()
+            val email = binding.emailEt.text.toString()
+            val password = binding.passET.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
 
