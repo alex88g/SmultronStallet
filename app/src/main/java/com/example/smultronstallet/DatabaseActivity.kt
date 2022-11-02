@@ -36,7 +36,7 @@ class DatabaseActivity : AppCompatActivity() {
                         val age = document.data["age"].toString().toInt()
 
                         val email = document.data["email"].toString()
-                        val item = User(name = name, email = email, age = age)
+                        val item = User(name = name, email = email)
 
                         list.add(item)
                     }
