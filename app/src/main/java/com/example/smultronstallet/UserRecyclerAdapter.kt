@@ -30,7 +30,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
 
         // sätt in den personens uppgifter i vår view
         holder.nameTextView.text = user.name
-        holder.ageTextView.text = user.age.toString()
+        holder.phoneTextView.text = user.phone.toString()
         holder.emailTextView.text = user.email
 
         // Här lägger vi imageURL
@@ -55,7 +55,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
         // när en viewholder skapas letar vi reda på två textvews som finns inne i vår itemview
         // (vår itemview är skapad utifrån vår list_item layout
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
-        var ageTextView = itemView.findViewById<TextView>(R.id.ageTextView)
+        var phoneTextView = itemView.findViewById<TextView>(R.id.phoneTextView)
         var emailTextView = itemView.findViewById<TextView>(R.id.emailTextView)
 
 

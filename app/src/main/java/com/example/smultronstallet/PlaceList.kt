@@ -10,7 +10,19 @@ import com.google.firebase.ktx.Firebase
 class PlaceList {
     var placeList = mutableListOf<Place>()
     val db = Firebase.firestore
-
+init {
+    createPlaces()
+    for(place in placeList){
+        db.collection("places")
+            .add(place)
+            .addOnSuccessListener { documentReference ->
+                Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                Log.w(ContentValues.TAG, "Error adding document", e)
+            }
+    }
+}
     fun createPlaces() {
 
         placeList.add(Place("Brödernas", 59.30696, 18.03324,4.0,""))
