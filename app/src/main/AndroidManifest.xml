@@ -72,10 +72,6 @@
             android:value="AIzaSyAk6BgqWNZ10FSN0kiU7CLeExG-F3kZFH0" />
 
         <activity
-            android:name=".MapsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_maps" />
-        <activity
             android:name=".SignInActivity"
             android:configChanges="orientation"
             android:exported="true"

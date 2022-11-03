@@ -6,16 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
-import android.widget.RelativeLayout
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import com.example.smultronstallet.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_sign_up.*
-import kotlinx.android.synthetic.main.card_layout.*
+
 //import kotlinx.coroutines.flow.internal.NoOpContinuation.context
 //import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
@@ -26,6 +24,7 @@ class SignUpActivity : AppCompatActivity() {
     lateinit var emailView: EditText
     lateinit var passwordView: EditText
     lateinit var username: EditText
+    lateinit var phonenr: EditText
     val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +35,7 @@ class SignUpActivity : AppCompatActivity() {
         emailView = findViewById(R.id.emailEt)
         passwordView = findViewById(R.id.passET)
         username = findViewById(R.id.userName)
+        phonenr = findViewById(R.id.phonenrTextView)
 
         //business Login!
         val businessAcount = intent.getBooleanExtra("business", false)
@@ -43,6 +43,7 @@ class SignUpActivity : AppCompatActivity() {
             userName.hint = "Business Name"
             emailEt.hint = "Business eMail"
             textView3.text = "Register your Business"
+            phonenrTextView.hint = "Business phone"
 
             signup.setBackgroundResource(R.drawable.smultronstallet_background)
 
@@ -62,17 +63,18 @@ class SignUpActivity : AppCompatActivity() {
             val email = binding.emailEt.text.toString()
             val pass = binding.passET.text.toString()
             val confirmPass = binding.confirmPassEt.text.toString()
+            val phoneNR = phonenr.text.toString()
 
             // add to Database
             if(businessAcount){
-                val item = User(name = username, email = email)
+                val item = User(name = username, email = email, phone = phoneNR)
                 db.collection("owners")
                     .add(item)
                     .addOnSuccessListener { documentReference ->
                         Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
                     }
             }else if(!businessAcount){
-                val item = User(name = username, email = email)
+                val item = User(name = username, email = email, phone = phoneNR)
                 db.collection("users")
                     .add(item)
                     .addOnSuccessListener { documentReference ->
