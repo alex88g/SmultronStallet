@@ -9,14 +9,16 @@ class UserList() {
     val db = Firebase.firestore
     var users = mutableListOf<User>()
 
-     init {
-         createUsers()
-     }
+
+    init {
+        createUsers()
+    }
 
     fun createUsers() {
         for(i in 1..100){
             var randomNr = (1000000..9999999).random()
             users.add(User("user$i","user${i}@user${i}mail.se","+4673$randomNr"))
+
 
         }
         for(user in users){
@@ -31,6 +33,7 @@ class UserList() {
 
 
         }
+
 
     }
 }
