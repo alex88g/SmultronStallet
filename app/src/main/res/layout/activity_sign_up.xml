@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="30dp"
         android:drawableStart="@drawable/ic_email"
         android:ems="10"
@@ -61,34 +61,16 @@
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phonenrTextView" />
-
-    <EditText
-        android:id="@+id/phonenrTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:drawableStart="@drawable/ic_baseline_smartphone_24"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Phone nr"
-        android:imeOptions="actionDone"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailEt" />
+        app:layout_constraintTop_toBottomOf="@+id/phonenrTextView" />
 
     <EditText
         android:id="@+id/passET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:drawableStart="@drawable/ic_lock"
         android:gravity="center"
@@ -99,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phonenrTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/emailEt" />
 
     <EditText
         android:id="@+id/confirmPassEt"
