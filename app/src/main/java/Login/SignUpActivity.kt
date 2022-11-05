@@ -2,6 +2,7 @@ package Login
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -43,10 +44,12 @@ class SignUpActivity : AppCompatActivity() {
         if(businessAcount){
             userName.hint = "Business Name"
             emailEt.hint = "Business eMail"
+
             textView3.text = "Register to business account"
+
             phonenrTextView.hint = "Business phone"
 
-            signup.setBackgroundResource(R.drawable.smultronstallet_background)
+            signup.setBackgroundResource(R.drawable.ownersignup)
 
         }
 

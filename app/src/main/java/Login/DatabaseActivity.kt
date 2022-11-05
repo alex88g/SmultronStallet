@@ -34,10 +34,10 @@ class DatabaseActivity : AppCompatActivity() {
                     val list = mutableListOf<User>()
                     for (document in it.result){
                         val name = document.data["name"].toString()
-                        val age = document.data["age"].toString().toInt()
+                        val phone = document.data["phone"].toString()
 
                         val email = document.data["email"].toString()
-                        val item = User(name = name, email = email, age = age)
+                        val item = User(name = name, email = email,phone = phone)
 
                         list.add(item)
                     }

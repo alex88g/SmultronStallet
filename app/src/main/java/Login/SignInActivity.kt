@@ -26,7 +26,8 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        //UserList()
+        //PlaceList()
         emailView = findViewById(R.id.emailEt)
         passwordView = findViewById(R.id.passET)
 
