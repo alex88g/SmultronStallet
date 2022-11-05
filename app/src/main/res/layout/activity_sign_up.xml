@@ -124,8 +124,9 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="15dp"
         android:gravity="center"
-        android:text="Welcome, Register to SmultroStället"
-        android:textColor="#79F179DD"
+        android:text="Register to user account!"
+        android:textColor="#79DC648C"
+
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

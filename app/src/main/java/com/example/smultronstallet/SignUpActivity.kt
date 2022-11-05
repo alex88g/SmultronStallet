@@ -43,8 +43,9 @@ class SignUpActivity : AppCompatActivity() {
         if(businessAcount){
             userName.hint = "Business Name"
             emailEt.hint = "Business eMail"
-            textView3.text = "Register your Business"
-            textView3.setTextColor(Color.parseColor("#79851472"))
+
+            textView3.text = "Register to business account"
+
             phonenrTextView.hint = "Business phone"
 
             signup.setBackgroundResource(R.drawable.ownersignup)

@@ -24,7 +24,21 @@ class MyAdapter(val newsList : ArrayList<News>) : RecyclerView.Adapter<MyAdapter
         val currentItem = newsList[position]
         holder.titleImage.setImageResource(currentItem.titleImage)
         holder.infoHeading.text = currentItem.heading
+
+        // Här lägger vi imageURL
+        //var imageUrl = currentItem.imageURL
+
+        //val radius = 30
+        //val margin = 10
+        //Glide.with(context)
+        //    .load(imageURL)
+        //    .error(R.drawable.ic_launcher_background)
+        //    .centerCrop()
+        //    .transform(RoundedCorners(radius))
+        //    .into(holder.menuImage)
     }
+
+
 
     override fun getItemCount(): Int {
         return newsList.size
