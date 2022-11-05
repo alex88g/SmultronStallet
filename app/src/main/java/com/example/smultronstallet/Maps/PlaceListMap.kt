@@ -1,4 +1,4 @@
-package Maps
+package com.example.smultronstallet.Maps
 
 import com.example.smultronstallet.R
 import com.google.android.gms.maps.GoogleMap

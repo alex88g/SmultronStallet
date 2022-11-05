@@ -1,4 +1,4 @@
-package Smultron
+package com.example.smultronstallet.Smultron
 
 import android.os.Bundle
 import android.widget.ImageView

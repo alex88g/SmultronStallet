@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import Maps.MyAdapter
-import Maps.News
+import com.example.smultronstallet.Maps.MyAdapter
+import com.example.smultronstallet.Maps.News
 import com.example.smultronstallet.R
 
 class SearchFragment : Fragment() {

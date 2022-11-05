@@ -1,4 +1,4 @@
-package Smultron
+package com.example.smultronstallet.Smultron
 
 import android.content.ContentValues.TAG
 import android.util.Log

@@ -1,4 +1,4 @@
-package Maps
+package com.example.smultronstallet.Maps
 
 
 import com.google.firebase.firestore.ktx.firestore

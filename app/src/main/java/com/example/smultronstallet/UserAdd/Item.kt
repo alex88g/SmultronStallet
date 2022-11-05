@@ -1,4 +1,4 @@
-package UserAdd
+package com.example.smultronstallet.UserAdd
 
 import com.google.firebase.firestore.DocumentId
 

@@ -7,7 +7,7 @@
 
     android:background="#75DDB2C1"
 
-    tools:context="UserAdd.AddItemActivity">
+    tools:context=".UserAdd.AddItemActivity">
 
     <EditText
         android:id="@+id/nameView3"

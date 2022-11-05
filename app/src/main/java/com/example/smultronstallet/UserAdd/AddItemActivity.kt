@@ -1,4 +1,4 @@
-package UserAdd
+package com.example.smultronstallet.UserAdd
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
