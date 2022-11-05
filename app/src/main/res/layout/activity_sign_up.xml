@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/signup"
     android:background="@drawable/smultronstallet_background"
-    tools:context=".SignUpActivity">
+    tools:context="Login.SignUpActivity">
 
     <EditText
         android:id="@+id/userName"

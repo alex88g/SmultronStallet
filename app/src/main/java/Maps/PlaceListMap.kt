@@ -1,5 +1,6 @@
-package com.example.smultronstallet
+package Maps
 
+import com.example.smultronstallet.R
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions

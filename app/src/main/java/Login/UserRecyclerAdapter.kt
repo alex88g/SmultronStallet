@@ -1,4 +1,4 @@
-package com.example.smultronstallet
+package Login
 
 import android.content.Context
 import android.util.Log
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.smultronstallet.R
 
 class UserRecyclerAdapter (private val context: Context, private val users: MutableList<User>) :
 

@@ -2,13 +2,12 @@ package com.example.smultronstallet
 
 
 
+import Login.SignInActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import fragment.HomeFragment
 import fragment.MapsFragment
 

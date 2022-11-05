@@ -1,4 +1,4 @@
-package com.example.smultronstallet
+package Login
 
 
 import android.content.Intent
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.smultronstallet.MainActivity
+import com.example.smultronstallet.R
 import com.example.smultronstallet.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

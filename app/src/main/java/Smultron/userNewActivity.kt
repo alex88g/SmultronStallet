@@ -1,9 +1,10 @@
-package com.example.smultronstallet
+package Smultron
 
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.smultronstallet.R
 import kotlinx.android.synthetic.main.activity_user_new.*
 
 
