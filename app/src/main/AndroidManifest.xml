@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmultronStallet"
         tools:targetApi="31">
-        
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAk6BgqWNZ10FSN0kiU7CLeExG-F3kZFH0" />
