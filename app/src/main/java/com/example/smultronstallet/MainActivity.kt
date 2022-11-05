@@ -11,6 +11,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import fragment.HomeFragment
 import fragment.MapsFragment
+
 import fragment.ReviewFragment
 import fragment.SearchFragment
 import kotlinx.android.synthetic.main.activity_main.*
