@@ -2,10 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/smultronstallet_background"
     tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/OwnerSignin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#75DDB2C1"
+        android:text="Business Sign in"
+        android:textColor="#DC648C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BusinessTextView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/BusinessTextView"
@@ -51,10 +70,10 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:drawableStart="@drawable/ic_lock"
-        android:hint="Type your password"
-        android:inputType="textPassword"
-        android:imeOptions="actionDone"
         android:gravity="center_horizontal"
+        android:hint="Type your password"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/passET" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/wellcomeView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"

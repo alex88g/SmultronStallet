@@ -44,7 +44,7 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/wellcomeView" />
 
     <EditText
         android:id="@+id/emailEt"
@@ -117,7 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/confirmPassEt" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/wellcomeView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
