@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.smultronstallet.MainActivity
 import com.example.smultronstallet.R
 import com.example.smultronstallet.databinding.ActivitySignInBinding
+import com.example.smultronstallet.OwnerActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -114,7 +115,7 @@ class SignInActivity : AppCompatActivity() {
                     auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                         if (it.isSuccessful) {
                             if(businessSignin) {
-                                val intent = Intent(this, DatabaseActivity::class.java)
+                                val intent = Intent(this, OwnerActivity::class.java)
                                 startActivity(intent)
                             } else if(!businessSignin){
                                 val intent = Intent(this, MainActivity::class.java)
