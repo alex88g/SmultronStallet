@@ -1,8 +1,10 @@
 package Login
 
 
+import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +13,11 @@ import com.example.smultronstallet.R
 import com.example.smultronstallet.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_sign_in.*
+import kotlinx.android.synthetic.main.activity_sign_in.emailEt
+import kotlinx.android.synthetic.main.activity_sign_in.passET
 
 class SignInActivity : AppCompatActivity() {
 
@@ -19,7 +25,8 @@ class SignInActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
     lateinit var emailView: EditText
     lateinit var passwordView: EditText
-
+    var businessSignin = false
+    val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +44,23 @@ class SignInActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
 
+        binding.OwnerSignin.setOnClickListener {
 
+            textView.setEnabled(false)
+            textView.setHint("")
+            textView.setText(null)
+            BusinessTextView.setEnabled(false)
+            BusinessTextView.setHint("")
+            BusinessTextView.setText(null)
+            buttonSignin.setText("Business Sign In")
+            wellcomeView.setText("Business Login")
+            emailEt.setHint("Business mail")
+            passET.setHint("Password")
+            OwnerSignin.setBackgroundResource(android.R.color.transparent)
+            OwnerSignin.setText(null)
+            signin.setBackgroundResource(R.drawable.ownersignup)
+
+        }
         binding.textForgot.setOnClickListener {
             val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
@@ -58,24 +81,53 @@ class SignInActivity : AppCompatActivity() {
 
         }
 
-        binding.buttonSignin.setOnClickListener {
-            val email = binding.emailEt.text.toString()
-            val password = binding.passET.text.toString()
+            binding.buttonSignin.setOnClickListener {
+                val email = binding.emailEt.text.toString()
+                val password = binding.passET.text.toString()
+                val ownerCheck = db.collection("owners").whereEqualTo("email", email)
+                ownerCheck
+                    .get()
+                    .addOnCompleteListener {
+                        if(it.isSuccessful){
+                            Log.d("!!!","ownerCheck")
+                            Toast.makeText(applicationContext,"Exists",Toast.LENGTH_SHORT).show()
+                              //val document = it.result
 
-            if (email.isNotEmpty() && password.isNotEmpty()) {
+                                for(document in it.result) {
+                                    val emailcheck = document.data["email"].toString()
+                                    if(email == emailcheck) {
+                                        businessSignin = true
+                                    }
+                                }
 
-                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+
+
+                            Log.d("!!!","businessSignin = $businessSignin")
+                        }
                     }
-                }
-            } else {
-                Toast.makeText(this, "Empty fields are not allowed!", Toast.LENGTH_SHORT).show()
+                    .addOnFailureListener { exception ->
+                        Log.d(ContentValues.TAG, "Account does not exist!", exception)
+                    }
+                if (email.isNotEmpty() && password.isNotEmpty()) {
 
+
+                    auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            if(businessSignin) {
+                                val intent = Intent(this, DatabaseActivity::class.java)
+                                startActivity(intent)
+                            } else if(!businessSignin){
+                                val intent = Intent(this, MainActivity::class.java)
+                                startActivity(intent)
+                            }
+                        } else {
+                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } else {
+                    Toast.makeText(this, "Empty fields are not allowed!", Toast.LENGTH_SHORT).show()
+
+                }
             }
-        }
     }
 }
