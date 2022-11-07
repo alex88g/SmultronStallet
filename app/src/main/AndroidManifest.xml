@@ -18,12 +18,34 @@
         android:theme="@style/Theme.SmultronStallet"
         tools:targetApi="31">
         <activity
+            android:name=".ownerSendOfferActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ownerReviewsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SignInActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+      <!--  <activity
             android:name=".LocationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        -->
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -38,9 +60,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAk6BgqWNZ10FSN0kiU7CLeExG-F3kZFH0" />
-
-        <activity
-            android:name="MapsActivity"
+<!--
+       <activity
+            android:name=".MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
@@ -49,7 +71,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
+        </activity> -->
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false">
@@ -93,7 +115,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".ownerActivity"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait">

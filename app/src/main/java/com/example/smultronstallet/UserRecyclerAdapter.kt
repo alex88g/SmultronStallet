@@ -54,7 +54,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         // när en viewholder skapas letar vi reda på två textvews som finns inne i vår itemview
         // (vår itemview är skapad utifrån vår list_item layout
-        var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
+        var nameTextView = itemView.findViewById<TextView>(R.id.reviewNameTextView)
         var phoneTextView = itemView.findViewById<TextView>(R.id.phoneTextView)
         var emailTextView = itemView.findViewById<TextView>(R.id.emailTextView)
 

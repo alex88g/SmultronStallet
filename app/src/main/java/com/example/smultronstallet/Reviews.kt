@@ -1,4 +1,4 @@
 package com.example.smultronstallet
 
-class Reviews {
+class Reviews (var name: String, var review: String ) {
 }
