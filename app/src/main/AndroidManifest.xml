@@ -17,11 +17,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmultronStallet"
         tools:targetApi="31">
+        <activity
+            android:name=".ownerSendOfferActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ownerReviewsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ownerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAk6BgqWNZ10FSN0kiU7CLeExG-F3kZFH0" />
-
 
         <activity
             android:name="Login.ForgotPasswordActivity"
@@ -37,7 +57,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name="Login.DatabaseActivity"
             android:exported="false">
