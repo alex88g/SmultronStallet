@@ -60,7 +60,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAk6BgqWNZ10FSN0kiU7CLeExG-F3kZFH0" />
-<!--
+
        <activity
             android:name=".MapsActivity"
             android:exported="false"
