@@ -31,7 +31,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        cameraButton1.setOnClickListener{
+            var intentCamerar = Intent(this, CameraActivity::class.java)
+            startActivity(intentCamerar)
+        }
         replaceFragment(homeFragment)
 
 

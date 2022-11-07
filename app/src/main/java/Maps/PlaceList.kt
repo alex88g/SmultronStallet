@@ -24,7 +24,7 @@ init {
 }
     fun createPlaces() {
 
-        placeList.add(Place("Brödernas", 59.30696, 18.03324,4.0,"brödernas.jpeg"))
+       /* placeList.add(Place("Brödernas", 59.30696, 18.03324,4.0,"brödernas.jpeg"))
         placeList.add(Place("MGL Sushi", 59.30722, 18.02694,4.3,"mgl_sushi.jpeg"))
         placeList.add(Place("Sjöviks pizzeria", 59.30707, 18.02926,4.0,"sjöviks_pizzeria"))
         placeList.add(Place("Wong Kee Restaurang", 59.30695, 18.02892,3.9,"wong_kee.jpeg"))
@@ -54,7 +54,7 @@ init {
         placeList.add(Place("Pizzeria Di Metro", 59.31014, 18.02205,3.0,"pizzeria_di_metro.jpeg"))
         placeList.add(Place("Boulebar", 59.31282, 18.027,4.2,"boulebar.jpeg"))
         placeList.add(Place("Café Rosteriet", 59.31198, 18.02396,4.0,"cafe_rosteriet.jpeg"))
-        placeList.add(Place("Chong Qing", 59.31294, 18.02849,4.2,"chong_qing"))
+        placeList.add(Place("Chong Qing", 59.31294, 18.02849,4.2,"chong_qing"))*/
 
     }
 }
