@@ -41,12 +41,12 @@ class SignUpActivity : AppCompatActivity() {
         //business Login!
         val businessAcount = intent.getBooleanExtra("business", false)
         if(businessAcount){
-            userName.hint = "Business Name"
-            emailEt.hint = "Business eMail"
+            userName.hint = "Användarnamn"
+            emailEt.hint = "E-post"
 
-            wellcomeView.text = "Register to business account"
+            wellcomeView.text = "Registrera dig till Smultronstället företag!"
 
-            phonenrTextView.hint = "Business phone"
+            phonenrTextView.hint = "Mobilnummer"
 
             signup.setBackgroundResource(R.drawable.ownersignup)
 
