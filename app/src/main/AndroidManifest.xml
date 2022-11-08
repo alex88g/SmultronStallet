@@ -18,21 +18,35 @@
         android:theme="@style/Theme.SmultronStallet"
         tools:targetApi="31">
         <activity
-            android:name=".ownerSendOfferActivity"
+            android:name="Login.PlaceRecycleActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ownerReviewsActivity"
+            android:name=".CameraActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ownerActivity"
+            android:name=".OwnerSendOfferActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".OwnerReviewsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".OwnerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

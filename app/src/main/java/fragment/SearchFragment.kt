@@ -1,5 +1,6 @@
 package fragment
 
+import Login.UserRecyclerAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,10 +11,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import Maps.MyAdapter
 import Maps.News
+import Maps.Place
+import android.content.ContentValues
+import android.content.Context
+import android.content.Intent
+import android.util.Log
+import com.example.smultronstallet.MainActivity
 import com.example.smultronstallet.R
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import io.grpc.internal.JsonUtil.getList
 
 class SearchFragment : Fragment() {
-
+    val db = Firebase.firestore
     lateinit var adapter : MyAdapter
     lateinit var recyclerView : RecyclerView
     lateinit var newsArrayList: ArrayList<News>

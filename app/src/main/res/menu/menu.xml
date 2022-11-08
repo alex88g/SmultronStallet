@@ -5,11 +5,13 @@
         android:id="@+id/ic_home"
         android:icon="@drawable/ic_home"
         android:title="Hem" />
+        android:title="Kontakter" />
+
 
     <item
         android:id="@+id/ic_search"
         android:icon="@drawable/ic_search"
-        android:title="Sök" />
+        android:title="Platser" />
 
     <item
         android:id="@+id/ic_map"

@@ -2,7 +2,9 @@ package com.example.smultronstallet
 
 
 
+import Login.DatabaseActivity
 import Login.SignInActivity
+import Maps.PlaceList
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -31,30 +33,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        cameraButton1.setOnClickListener{
+            var intentCamerar = Intent(this, CameraActivity::class.java)
+            startActivity(intentCamerar)
+        }
+        replaceFragment(searchFragment)
 
-        replaceFragment(homeFragment)
 
-
-//        fun getList(myCallback :(MutableList<Place>) -> Unit) {
-//            db.collection("places")
-//                .get()
-//                .addOnCompleteListener {
-//                    if(it.isSuccessful){
-//                        val list = mutableListOf<Place>()
-//                        for (document in it.result){
-//                            val name = document.data["name"].toString()
-//                            val review = document.data["review"].toString().toDouble()
-//                            val item = Place(name = name,review = review)
-//                            list.add(item)
-//                        }
-//                        myCallback(list)
-//                    }
-//
-//                }
-//                .addOnFailureListener { exception ->
-//                    Log.d(ContentValues.TAG, "error gettingdocuments: ", exception)
-//                }
-//        }
+        //PlaceList()
 
         button = findViewById(R.id.buttonLog)
 
@@ -62,11 +48,8 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
-
-
-
-
         }
+
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.ic_home -> replaceFragment(homeFragment)
@@ -88,24 +71,6 @@ class MainActivity : AppCompatActivity() {
 
             transaction.commit()
         }
-
-        //var list = SmultronList().listSmultronPerson[5]
-
-
-        //var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        //recyclerView.layoutManager = LinearLayoutManager(this)
-
-
-
-        //var adapter =RecyclerAdapter()
-        //recyclerView.adapter =adapter
-        //adapter.setOnItemClickListener(object: RecyclerAdapter.onItemClicklisterner {
-        //    override fun onItemClick(position: Int) {
-        //        //  Toast.makeText(this@MainActivity,"you clicked on item ${position}", Toast.LENGTH_LONG).show()
-
-        //        val intent= Intent(this@MainActivity,userNewActivity::class.java)
-
-        //        startActivity(intent)
 
     }
 }

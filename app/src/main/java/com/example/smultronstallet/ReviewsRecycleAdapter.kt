@@ -41,5 +41,6 @@ class ReviewsRecycleAdapter(val context: Context, val reviews: List<Reviews> ) :
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
         var reviewTextView = itemView.findViewById<TextView>(R.id.reviewTextView)
 
+
     }
 }

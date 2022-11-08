@@ -1,11 +1,14 @@
 package Login
 
 import android.content.ContentValues
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.smultronstallet.MainActivity
 import com.example.smultronstallet.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -24,6 +27,13 @@ class DatabaseActivity : AppCompatActivity() {
 
             val adapter = UserRecyclerAdapter(this,it)
             recyclerView.adapter = adapter
+            adapter.setOnItemClickListener(object : UserRecyclerAdapter.onItemClickListener{
+                override fun onItemClick(position: Int) {
+                    val intent = Intent(this@DatabaseActivity, PlaceRecycleActivity::class.java)
+                    startActivity(intent)
+                    Toast.makeText(this@DatabaseActivity, "you Clicked on iten no. $position",Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
     fun getList(myCallback :(MutableList<User>) -> Unit) {
