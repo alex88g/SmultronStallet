@@ -29,7 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/item_title"
+            android:id="@+id/itemTitle"
             android:layout_width="236dp"
             android:layout_height="39dp"
             android:layout_marginStart="16dp"
@@ -38,13 +38,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/item_detail"
+            android:id="@+id/itemDetail"
             android:layout_width="236dp"
             android:layout_height="45dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toRightOf="@id/itemImage"
-            app:layout_constraintTop_toBottomOf="@+id/item_title" />
+            app:layout_constraintTop_toBottomOf="@+id/itemTitle" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

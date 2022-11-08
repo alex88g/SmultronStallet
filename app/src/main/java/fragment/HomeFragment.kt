@@ -1,5 +1,7 @@
 package fragment
 
+import Login.DatabaseActivity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,8 +24,9 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-            Toast.makeText(context, "Välkommen Hem!",Toast.LENGTH_SHORT).show()
+        val intent = Intent(activity, DatabaseActivity::class.java)
+        startActivity(intent)
+            //Toast.makeText(context, "Välkommen Hem!",Toast.LENGTH_SHORT).show()
         }
 
     }
