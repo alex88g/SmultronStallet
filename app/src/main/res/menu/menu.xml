@@ -4,21 +4,21 @@
     <item
         android:id="@+id/ic_home"
         android:icon="@drawable/ic_home"
-        android:title="Home"/>
+        android:title="Hemma" />
 
     <item
         android:id="@+id/ic_search"
         android:icon="@drawable/ic_search"
-        android:title="Search" />
+        android:title="Sök" />
 
     <item
         android:id="@+id/ic_map"
         android:icon="@drawable/ic_map"
-        android:title="Map" />
+        android:title="Karta" />
     <item
         android:id="@+id/ic_rate_review"
         android:icon="@drawable/ic_rate_review"
-        android:title="Review" />
+        android:title="Recension" />
 
 
 

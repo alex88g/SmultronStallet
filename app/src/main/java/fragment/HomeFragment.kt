@@ -23,7 +23,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-            Toast.makeText(context, "Welcome to Home!",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Välkommen Hem!",Toast.LENGTH_SHORT).show()
         }
 
     }

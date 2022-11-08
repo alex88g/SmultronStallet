@@ -101,10 +101,10 @@ class SignUpActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    Toast.makeText(this, "Incorrect password", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Fel lösenord", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "Empty fields are not allowed!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Tomma fält är inte tillåtna!!", Toast.LENGTH_SHORT).show()
 
             }
         }
