@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
             transaction.commit()
         }
 
-        //var list = SmultronList().listSmultronPerson[5]
+
 
 
         //var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
