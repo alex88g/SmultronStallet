@@ -15,12 +15,24 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
 
 
     val layoutInflater = LayoutInflater.from(context)
+    private lateinit var mListener : onItemClickListener
+
+    interface onItemClickListener{
+
+        fun onItemClick(position : Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+
+        mListener = listener
+
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = layoutInflater.inflate(R.layout.userlist_item, parent, false)
         Log.d("!!!Adapter", "oncreateViewholder")
 
-        return ViewHolder(itemView)
+        return ViewHolder(itemView,mListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -52,12 +64,21 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
         return users.size
     }
 
-    inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView : View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
         // när en viewholder skapas letar vi reda på två textvews som finns inne i vår itemview
         // (vår itemview är skapad utifrån vår list_item layout
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
         var phoneTextView = itemView.findViewById<TextView>(R.id.phoneTextView)
         var emailTextView = itemView.findViewById<TextView>(R.id.emailTextView)
+
+        init {
+            itemView.setOnClickListener {
+
+                listener.onItemClick(adapterPosition)
+
+            }
+
+        }
 
 
     }

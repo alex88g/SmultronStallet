@@ -1,13 +1,20 @@
 package Maps
 
 
+import Login.User
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.smultronstallet.R
 import com.google.android.material.imageview.ShapeableImageView
+import fragment.SearchFragment
 
 class MyAdapter(val newsList : ArrayList<News>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 

@@ -23,6 +23,6 @@ class ReviewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-            Toast.makeText(context, "Welcome to Review!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Vällkomen till Recesion!", Toast.LENGTH_SHORT).show()
         }
     }
