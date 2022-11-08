@@ -3,12 +3,10 @@ package com.example.smultronstallet
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.smultronstallet.databinding.ActivitySignInBinding
 
 
-class ownerSendOfferActivity : AppCompatActivity() {
+class OwnerSendOfferActivity : AppCompatActivity() {
 
     //lateinit var binding: ActivitySignInBinding
 

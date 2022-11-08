@@ -25,7 +25,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ownerSendOfferActivity"
+            android:name=".OwnerSendOfferActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -39,7 +39,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ownerActivity"
+            android:name=".OwnerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
