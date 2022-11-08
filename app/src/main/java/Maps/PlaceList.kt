@@ -24,6 +24,7 @@ class PlaceList {
 //}
     fun createPlaces() {
 
+
         placeList.add(Place("","Brödernas", 59.30696, 18.03324,"4.0","https://firebasestorage.googleapis.com/v0/b/smultronstalletdatabase.appspot.com/o/bro%CC%88dernas.jpeg?alt=media&token=b5f34195-0f0d-4ef9-8d55-002a05dd4f80"))
         placeList.add(Place("","MGL Sushi", 59.30722, 18.02694,"4.3","https://firebasestorage.googleapis.com/v0/b/smultronstalletdatabase.appspot.com/o/mgl_sushi.jpeg?alt=media&token=68b72718-6f1e-40f0-ab0f-485c6ba5f0de"))
         placeList.add(Place("","Sjöviks pizzeria", 59.30707, 18.02926,"4.0","https://firebasestorage.googleapis.com/v0/b/smultronstalletdatabase.appspot.com/o/sjo%CC%88viks_pizzeria.png?alt=media&token=5e00caa2-e51a-4d28-a7b2-b847c0875101"))
@@ -55,6 +56,7 @@ class PlaceList {
         placeList.add(Place("","Boulebar", 59.31282, 18.027,"4.2","https://firebasestorage.googleapis.com/v0/b/smultronstalletdatabase.appspot.com/o/boulebar.jpeg?alt=media&token=abb606f7-29c4-44cd-a6d0-098e6ce8949d"))
         placeList.add(Place("","Café Rosteriet", 59.31198, 18.02396,"4.0","https://firebasestorage.googleapis.com/v0/b/smultronstalletdatabase.appspot.com/o/cafe_rosteriet.jpeg?alt=media&token=53df5245-60b0-4181-a371-68dc59930daf"))
         placeList.add(Place("","Chong Qing", 59.31294, 18.02849,"4.2","https://firebasestorage.googleapis.com/v0/b/smultronstalletdatabase.appspot.com/o/chong_qing.jpeg?alt=media&token=3c00f2b2-ddcb-4e1e-942d-0286e2c7e780"))
+
 
     }
 }
