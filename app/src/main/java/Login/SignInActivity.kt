@@ -54,7 +54,7 @@ class SignInActivity : AppCompatActivity() {
             BusinessTextView.setEnabled(false)
             BusinessTextView.setHint("")
             BusinessTextView.setText(null)
-            buttonSignin.setText("Business Sign In")
+            buttonSignin.setText("Business Logga in")
             wellcomeView.setText("Business Login")
             emailEt.setHint("Business mail")
             passET.setHint("Password")
@@ -108,7 +108,7 @@ class SignInActivity : AppCompatActivity() {
                         }
                     }
                     .addOnFailureListener { exception ->
-                        Log.d(ContentValues.TAG, "Account does not exist!", exception)
+                        Log.d(ContentValues.TAG, "Kontot matchar inte!", exception)
                     }
                 if (email.isNotEmpty() && password.isNotEmpty()) {
 
@@ -128,7 +128,7 @@ class SignInActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    Toast.makeText(this, "Empty fields are not allowed!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Tomma fält är inte tillåtna!!", Toast.LENGTH_SHORT).show()
 
                 }
             }

@@ -52,7 +52,7 @@ class SearchFragment : Fragment() {
         adapter = MyAdapter(newsArrayList)
         recyclerView.adapter = adapter
 
-        Toast.makeText(context, "Welcome to Search!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Välkommen att Söka!", Toast.LENGTH_SHORT).show()
     }
 
 
