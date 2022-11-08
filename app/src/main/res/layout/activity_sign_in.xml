@@ -13,25 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="50dp"
         android:backgroundTint="#75DDB2C1"
         android:text="Företag logga in"
         android:textColor="#DC648C"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BusinessTextView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignin" />
 
     <TextView
         android:id="@+id/BusinessTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
         android:gravity="center"
         android:text="Skapa ett företagskonto"
@@ -87,7 +84,7 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="30dp"
         android:backgroundTint="#75DDB2C1"
-        android:text="Logga in"
+        android:text="Privat logga in"
         android:textColor="#DC648C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -102,7 +99,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="15dp"
         android:gravity="center"
-        android:text="Welcome, Logga In till Smultronstället !"
+        android:text="Välkommen, logga in  till Smultronstället privat!"
         android:textColor="#79DC648C"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,7 +111,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
         android:gravity="center"
         android:text="Skapa en användarkonto"
@@ -122,8 +119,9 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignin" />
+        app:layout_constraintTop_toBottomOf="@+id/OwnerSignin" />
 
     <TextView
         android:id="@+id/textForgot"

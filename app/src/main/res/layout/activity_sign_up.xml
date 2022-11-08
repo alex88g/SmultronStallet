@@ -124,7 +124,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="15dp"
         android:gravity="center"
-        android:text="Registrera dig på ett företagskont!"
+        android:text="Registrera dig till Smultronstället privat!"
         android:textColor="#79DC648C"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"

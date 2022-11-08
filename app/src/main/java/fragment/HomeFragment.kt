@@ -26,7 +26,8 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val intent = Intent(activity, DatabaseActivity::class.java)
         startActivity(intent)
-            //Toast.makeText(context, "Välkommen Hem!",Toast.LENGTH_SHORT).show()
-        }
+
+        Toast.makeText(context, "Välkommen Hem!",Toast.LENGTH_SHORT).show()
 
     }
+}
