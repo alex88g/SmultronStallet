@@ -29,7 +29,7 @@ class DatabaseActivity : AppCompatActivity() {
             recyclerView.adapter = adapter
             adapter.setOnItemClickListener(object : UserRecyclerAdapter.onItemClickListener{
                 override fun onItemClick(position: Int) {
-                    val intent = Intent(this@DatabaseActivity, MainActivity::class.java)
+                    val intent = Intent(this@DatabaseActivity, PlaceRecycleActivity::class.java)
                     startActivity(intent)
                     Toast.makeText(this@DatabaseActivity, "you Clicked on iten no. $position",Toast.LENGTH_SHORT).show()
                 }

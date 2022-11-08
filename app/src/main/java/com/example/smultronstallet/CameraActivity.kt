@@ -35,8 +35,7 @@ class CameraActivity : AppCompatActivity() {
         buttonSave = buttonSmultronSave
         val db = Firebase.firestore
         buttonSave.setOnClickListener {
-            var newSmultronPlace = Place(name = smultronPlats.text.toString(), review = recenssion.text.toString(),
-            latitude = locationGps.text.toString(), tag = bTagg.text.toString())
+            var newSmultronPlace = Place(name = smultronPlats.text.toString(), review = recenssion.text.toString())
             db.collection("newSmultronPlace").add(newSmultronPlace)
             finish()
 

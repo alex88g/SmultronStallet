@@ -2,6 +2,7 @@ package com.example.smultronstallet
 
 
 
+import Login.DatabaseActivity
 import Login.SignInActivity
 import Maps.PlaceList
 import android.content.Intent
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             var intentCamerar = Intent(this, CameraActivity::class.java)
             startActivity(intentCamerar)
         }
-        replaceFragment(homeFragment)
+        replaceFragment(searchFragment)
 
 
         //PlaceList()
@@ -47,11 +48,8 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
-
-
-
-
         }
+
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.ic_home -> replaceFragment(homeFragment)

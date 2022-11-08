@@ -120,7 +120,7 @@ class SignInActivity : AppCompatActivity() {
                                 startActivity(intent)
                             } else if(!businessSignin){
                                 Toast.makeText(this, "Välkommen Till SmultronStället!", Toast.LENGTH_SHORT).show()
-                                val intent = Intent(this, MainActivity::class.java)
+                                val intent = Intent(this, DatabaseActivity::class.java)
                                 startActivity(intent)
                             }
                         } else {
