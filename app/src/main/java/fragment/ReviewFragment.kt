@@ -24,8 +24,13 @@ class ReviewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+            Toast.makeText(context, "Vällkommen till Recesion!", Toast.LENGTH_SHORT).show()
+
         var intentCamerar = Intent(activity, CameraActivity::class.java)
         startActivity(intentCamerar)
             //Toast.makeText(context, "Vällkomen till Recesion!", Toast.LENGTH_SHORT).show()
+
         }
     }

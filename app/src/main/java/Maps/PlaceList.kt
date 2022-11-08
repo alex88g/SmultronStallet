@@ -58,5 +58,6 @@ class PlaceList {
         placeList.add(Place("","Chong Qing", 59.31294, 18.02849,"4.2","https://firebasestorage.googleapis.com/v0/b/smultronstalletdatabase.appspot.com/o/chong_qing.jpeg?alt=media&token=3c00f2b2-ddcb-4e1e-942d-0286e2c7e780"))
 
 
+
     }
 }
