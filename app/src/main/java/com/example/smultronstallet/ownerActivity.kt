@@ -15,12 +15,16 @@ class ownerActivity : AppCompatActivity() {
         logOutBtn.setOnClickListener{
             val intent = Intent(this, Login.SignInActivity::class.java)
             startActivity(intent)
-
-
-            val showReviewsBtn = findViewById<Button>(R.id.showReviewsBtn)
-            showReviewsBtn.setOnClickListener{
-                val intent = Intent(this, ownerReviewsActivity::class.java)
-                startActivity(intent)
-            }
         }
-    } }
+        val showReviewsBtn = findViewById<Button>(R.id.showReviewsBtn)
+        showReviewsBtn.setOnClickListener{
+            val intent = Intent(this, ownerReviewsActivity::class.java)
+            startActivity(intent)
+        }
+        val sendofferBtn = findViewById<Button>(R.id.sendOfferBtn)
+        sendofferBtn.setOnClickListener{
+            val intent = Intent(this, ownerSendOfferActivity::class.java)
+            startActivity(intent)
+        }
+    }
+}
