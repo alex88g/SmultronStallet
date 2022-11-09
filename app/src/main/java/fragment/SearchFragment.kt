@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import Maps.MyAdapter
-import Maps.News
 import Maps.Place
 import com.example.smultronstallet.R
 import com.google.firebase.firestore.ktx.firestore
@@ -21,7 +20,10 @@ class SearchFragment : Fragment() {
     val db = Firebase.firestore
     lateinit var adapter : MyAdapter
     lateinit var recyclerView : RecyclerView
+<<<<<<< HEAD
     //lateinit var newsArrayList: ArrayList<News>
+=======
+>>>>>>> alexbranch21
     val list = ArrayList<Place>()
 
 

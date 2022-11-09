@@ -71,22 +71,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="UserAdd.AddItemActivity"
-            android:exported="false"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name="Login.DatabaseActivity"
-            android:exported="false"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name="Login.SignUpActivity"
             android:exported="false"
             android:screenOrientation="portrait">

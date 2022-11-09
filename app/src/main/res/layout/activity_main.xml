@@ -90,7 +90,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_camera"
+<<<<<<< HEAD
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+=======
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+>>>>>>> alexbranch21
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

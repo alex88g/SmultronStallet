@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smultronstallet.R
 
-class PlaceRecyclerAdapter(private val context: Context, private val places: MutableList<Place>):
+class PlaceRecyclerAdapter(val context: Context, val places: MutableList<Place>):
     RecyclerView.Adapter<PlaceRecyclerAdapter.ViewHolder>() {
 
 
@@ -45,18 +45,6 @@ class PlaceRecyclerAdapter(private val context: Context, private val places: Mut
         // sätt in den personens uppgifter i vår view
         holder.nameTextView.text = place.name
         holder.reviewTextView.text = place.review.toString()
-
-
- //       Här lägger vi imageURL
-//        var imageUrl = place.imageURL
-//        val radius = 30
-//        val margin = 10
-//        Glide.with(context)
-//            .load(imageUrl)
-//            .error(R.drawable.ic_launcher_background)
-//            .centerCrop()
-//            .transform(RoundedCorners(radius))
-//            .into(holder.placeImage)
 
     }
 
