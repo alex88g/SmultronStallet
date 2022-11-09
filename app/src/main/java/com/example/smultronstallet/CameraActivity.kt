@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_camera.*
-import kotlinx.android.synthetic.main.activity_camera2.*
 import kotlinx.android.synthetic.main.fragment_review.*
 
 private const val REQUEST_CODE = 42
@@ -27,7 +26,7 @@ class CameraActivity : AppCompatActivity() {
      var newListOfSmultron = mutableListOf<Place>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_camera2)
+        setContentView(R.layout.activity_camera)
         smultronPlats = smultronPlace1
         recenssion = ReviewS
         locationGps1 = locationGps
@@ -35,9 +34,7 @@ class CameraActivity : AppCompatActivity() {
         buttonSave = buttonSmultronSave
         val db = Firebase.firestore
         buttonSave.setOnClickListener {
-//            var newSmultronPlace = Place(name = smultronPlats.text.toString(), review = recenssion.text.toString())
-//            db.collection("newSmultronPlace").add(newSmultronPlace)
-//            finish()
+
 
         }
 

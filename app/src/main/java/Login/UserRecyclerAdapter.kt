@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smultronstallet.R
 
-class UserRecyclerAdapter (private val context: Context, private val users: MutableList<User>) :
+class UserRecyclerAdapter (private val context: Context, private val users: ArrayList<User>) :
 
     RecyclerView.Adapter<UserRecyclerAdapter.ViewHolder>(){
 
@@ -29,7 +29,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = layoutInflater.inflate(R.layout.userlist_item, parent, false)
+        val itemView = layoutInflater.inflate(R.layout.fragment_home, parent, false)
         Log.d("!!!Adapter", "oncreateViewholder")
 
         return ViewHolder(itemView,mListener)
@@ -77,9 +77,6 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
                 listener.onItemClick(adapterPosition)
 
             }
-
         }
-
-
     }
 }

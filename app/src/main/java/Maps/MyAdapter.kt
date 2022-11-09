@@ -8,18 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.smultronstallet.R
-import com.google.android.material.imageview.ShapeableImageView
-import fragment.SearchFragment
-import kotlinx.coroutines.NonDisposableHandle.parent
-//import kotlinx.coroutines.flow.internal.NoOpContinuation.context
-//import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
-class MyAdapter(private val context: Context,val list : ArrayList<Place>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter( val context: Context,val list : ArrayList<Place>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
 
 
@@ -35,17 +27,17 @@ class MyAdapter(private val context: Context,val list : ArrayList<Place>) : Recy
         val currentItem = list[position]
         holder.infoReview.text = currentItem.review
         holder.titleName.text = currentItem.name
-        // Här lägger vi imageURL
 
+        // Här lägger vi imageURL
         var imageUrl = currentItem.imageURL
         val radius = 30
         val margin = 10
-        Glide.with(context)
-            .load(imageUrl)
-            .error(R.drawable.ic_launcher_background)
-            .centerCrop()
-            .transform(RoundedCorners(radius))
-            .into(holder.placeImage)
+//        Glide.with(context)
+//            .load(imageUrl)
+//            .error(R.drawable.ic_launcher_background)
+//            .centerCrop()
+//            .transform(RoundedCorners(radius))
+//            .into(holder.placeImage)
     }
 
 

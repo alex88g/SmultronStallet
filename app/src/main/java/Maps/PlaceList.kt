@@ -19,7 +19,7 @@ import com.google.firebase.ktx.Firebase
 
 class PlaceList {
     var placeList = mutableListOf<Place>()
-    lateinit var auth: FirebaseAuth
+    var auth: FirebaseAuth
     val db = Firebase.firestore
 init {
     auth = Firebase.auth
