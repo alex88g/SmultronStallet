@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import Maps.MyAdapter
 import Maps.News
+import Maps.Place
 import com.example.smultronstallet.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -60,12 +61,7 @@ class SearchFragment : Fragment() {
 
                     for (document in it.result){
                         val place = document.toObject<Place>()
-                       // val name = document.data["name"].toString()
-                       //// val lat = document.data["latitude"].toString().toDouble()
-                       //// val long = document.data["latitude"].toString().toDouble()
-                       //// val review = document.data["review"].toString()
-                       //// val imgUrl = document.data["imageURL"].toString()
-                       // val item = Place(name = name, latitude = lat,longitude = long, review = review,imageURL = imgUrl)
+
 
                         list.add(place)
                     }
