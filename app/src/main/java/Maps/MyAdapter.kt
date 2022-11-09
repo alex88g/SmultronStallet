@@ -15,47 +15,49 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.smultronstallet.R
 import com.google.android.material.imageview.ShapeableImageView
 import fragment.SearchFragment
+import kotlinx.coroutines.NonDisposableHandle.parent
+//import kotlinx.coroutines.flow.internal.NoOpContinuation.context
+//import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
-class MyAdapter(val newsList : ArrayList<News>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private val context: Context,val list : ArrayList<Place>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
 
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item,
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_layout,
             parent,false)
         return MyViewHolder(itemView)
 
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = newsList[position]
-        holder.titleImage.setImageResource(currentItem.titleImage)
-        holder.infoHeading.text = currentItem.heading
-
+        val currentItem = list[position]
+        holder.infoReview.text = currentItem.review
+        holder.titleName.text = currentItem.name
         // Här lägger vi imageURL
-        //var imageUrl = currentItem.imageURL
 
-        //val radius = 30
-        //val margin = 10
-        //Glide.with(context)
-        //    .load(imageURL)
-        //    .error(R.drawable.ic_launcher_background)
-        //    .centerCrop()
-        //    .transform(RoundedCorners(radius))
-        //    .into(holder.menuImage)
+        var imageUrl = currentItem.imageURL
+        val radius = 30
+        val margin = 10
+        Glide.with(context)
+            .load(imageUrl)
+            .error(R.drawable.ic_launcher_background)
+            .centerCrop()
+            .transform(RoundedCorners(radius))
+            .into(holder.placeImage)
     }
 
 
 
     override fun getItemCount(): Int {
-        return newsList.size
+        return list.size
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        val titleImage : ShapeableImageView = itemView.findViewById(R.id.title_image)
-        val infoHeading : TextView = itemView.findViewById(R.id.infoHeading)
-
+        val titleName : TextView = itemView.findViewById(R.id.itemTitle)
+        val infoReview : TextView = itemView.findViewById(R.id.itemDetail)
+        var placeImage = itemView.findViewById<ImageView>(R.id.itemImage)
     }
 }

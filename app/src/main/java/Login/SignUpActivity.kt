@@ -1,5 +1,6 @@
 package Login
 
+import Maps.Place
 import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -82,6 +83,10 @@ class SignUpActivity : AppCompatActivity() {
                     .add(item)
                     .addOnSuccessListener { documentReference ->
                         Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                        val place1 = Place()
+                        db.collection("users").document(documentReference.id)
+                            .collection("places")
+                            .add(place1)
                     }
 
             }
