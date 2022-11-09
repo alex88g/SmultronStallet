@@ -1,27 +1,45 @@
 package Maps
 
 
+import Login.PlaceRecycleActivity
+import Login.User
+import Login.UserRecyclerAdapter
 import android.content.ContentValues
+import android.content.Intent
 import android.util.Log
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.smultronstallet.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class PlaceList {
     var placeList = mutableListOf<Place>()
+    lateinit var auth: FirebaseAuth
     val db = Firebase.firestore
-//init {
-//    createPlaces()
-//    for(place in placeList){
-//        db.collection("places")
-//            .add(place)
-//            .addOnSuccessListener { documentReference ->
-//                Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//            }
-//            .addOnFailureListener { e ->
-//                Log.w(ContentValues.TAG, "Error adding document", e)
-//            }
-//    }
-//}
+init {
+    auth = Firebase.auth
+    getList {
+
+    }
+
+    //createPlaces()
+    //for(place in placeList){
+    //    db.collection("places")
+    //        .add(place)
+    //        .addOnSuccessListener { documentReference ->
+    //            Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+    //        }
+    //        .addOnFailureListener { e ->
+    //            Log.w(ContentValues.TAG, "Error adding document", e)
+    //        }
+    //}
+}
+
     fun createPlaces() {
 
 
@@ -58,5 +76,28 @@ class PlaceList {
         placeList.add(Place("","Chong Qing", 59.31294, 18.02849,"4.2","https://firebasestorage.googleapis.com/v0/b/smultronstalletdatabase.appspot.com/o/chong_qing.jpeg?alt=media&token=3c00f2b2-ddcb-4e1e-942d-0286e2c7e780"))
 
 
+    }
+    fun getList(myCallback :(MutableList<User>) -> Unit) {
+        db.collection("users")
+            .get()
+            .addOnCompleteListener {
+                if(it.isSuccessful){
+                    val list = mutableListOf<User>()
+                    for (document in it.result){
+                        val name = document.data["name"].toString()
+                        val phone = document.data["phone"].toString()
+                        val documentId = document.data["docId"].toString()
+
+                        val email = document.data["email"].toString()
+                        val item = User(docId = documentId, name = name, email = email,phone = phone)
+
+                        list.add(item)
+                    }
+                    myCallback(list)
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(ContentValues.TAG, "error gettingdocuments: ", exception)
+            }
     }
 }

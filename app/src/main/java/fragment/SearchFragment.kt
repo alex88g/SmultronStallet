@@ -19,6 +19,7 @@ import android.util.Log
 import com.example.smultronstallet.MainActivity
 import com.example.smultronstallet.R
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import io.grpc.internal.JsonUtil.getList
 
@@ -27,82 +28,58 @@ class SearchFragment : Fragment() {
     lateinit var adapter : MyAdapter
     lateinit var recyclerView : RecyclerView
     lateinit var newsArrayList: ArrayList<News>
+    val list = ArrayList<Place>()
 
-    lateinit var imageId : Array<Int>
-    lateinit var heading : Array<String>
-    lateinit var news : Array<String>
+
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
-    }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        val view = inflater.inflate(R.layout.fragment_search, container, false)
         dataInitialize()
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = MyAdapter(newsArrayList)
+        adapter = MyAdapter(container!!.context,list)
         recyclerView.adapter = adapter
 
         Toast.makeText(context, "Välkommen att Söka!", Toast.LENGTH_SHORT).show()
+
+        return view
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 
 
     fun dataInitialize(){
 
-        newsArrayList = arrayListOf<News>()
+        db.collection("places")
+            .get()
+            .addOnCompleteListener {
+                if(it.isSuccessful){
 
-        imageId = arrayOf(
-            R.drawable.a_chileansk,
-            R.drawable.b_indisk,
-            R.drawable.c_vietnamesisk,
-            R.drawable.d_chinesisk,
-            R.drawable.e_japansk,
-            R.drawable.f_balkan,
-            R.drawable.g_libanesisk,
-            R.drawable.h_rysk,
-            R.drawable.i_italiensk,
-            R.drawable.j_thai
-        )
+                    for (document in it.result){
+                        val place = document.toObject<Place>()
+                       // val name = document.data["name"].toString()
+                       //// val lat = document.data["latitude"].toString().toDouble()
+                       //// val long = document.data["latitude"].toString().toDouble()
+                       //// val review = document.data["review"].toString()
+                       //// val imgUrl = document.data["imageURL"].toString()
+                       // val item = Place(name = name, latitude = lat,longitude = long, review = review,imageURL = imgUrl)
 
-        heading = arrayOf(
-            getString(R.string.head_a),
-            getString(R.string.head_b),
-            getString(R.string.head_c),
-            getString(R.string.head_d),
-            getString(R.string.head_e),
-            getString(R.string.head_f),
-            getString(R.string.head_g),
-            getString(R.string.head_h),
-            getString(R.string.head_i),
-            getString(R.string.head_j),
-        )
+                        list.add(place)
+                    }
 
-        news = arrayOf(
-            getString(R.string.news_1),
-            getString(R.string.news_2),
-            getString(R.string.news_3),
-            getString(R.string.news_4),
-            getString(R.string.news_5),
-            getString(R.string.news_6),
-            getString(R.string.news_7),
-            getString(R.string.news_8),
-            getString(R.string.news_9),
-            getString(R.string.news_10),
-        )
-
-        for (i in imageId.indices){
-
-            val news = News(imageId[i],heading[i])
-            newsArrayList.add(news)
-        }
+                    recyclerView.adapter?.notifyDataSetChanged()
+                }
+            }
     }
+
 }
