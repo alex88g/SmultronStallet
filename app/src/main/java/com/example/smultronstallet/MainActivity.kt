@@ -33,12 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
         replaceFragment(searchFragment)
 
-<<<<<<< HEAD
-
-
-=======
         //PlaceList()
->>>>>>> alexbranch21
 
         button = findViewById(R.id.buttonLog)
 

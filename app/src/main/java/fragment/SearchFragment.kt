@@ -20,10 +20,9 @@ class SearchFragment : Fragment() {
     val db = Firebase.firestore
     lateinit var adapter : MyAdapter
     lateinit var recyclerView : RecyclerView
-<<<<<<< HEAD
+
     //lateinit var newsArrayList: ArrayList<News>
-=======
->>>>>>> alexbranch21
+
     val list = ArrayList<Place>()
 
 
