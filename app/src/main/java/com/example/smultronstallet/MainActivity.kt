@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(searchFragment)
 
 
-        //PlaceList()
+
 
         button = findViewById(R.id.buttonLog)
 

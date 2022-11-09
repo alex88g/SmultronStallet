@@ -17,17 +17,15 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class PlaceList {
+class PlaceList() {
     var placeList = mutableListOf<Place>()
+    var usedPlaceList = mutableListOf<Place>()
     lateinit var auth: FirebaseAuth
     val db = Firebase.firestore
 init {
-    auth = Firebase.auth
-    getList {
 
-    }
 
-    //createPlaces()
+    createPlaces()
     //for(place in placeList){
     //    db.collection("places")
     //        .add(place)
@@ -39,6 +37,22 @@ init {
     //        }
     //}
 }
+    fun randomPlace(): Place{
+            if (placeList.size == usedPlaceList.size) {
+                usedPlaceList.clear()
+            }
+
+            var place : Place? = null
+
+            do {
+                val rnd = (0 until placeList.size).random()
+                place = placeList[rnd]
+            } while(usedPlaceList.contains(place))
+
+            usedPlaceList.add(place!!)
+
+            return place
+    }
 
     fun createPlaces() {
 
