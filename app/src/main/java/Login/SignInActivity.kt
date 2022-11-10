@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.smultronstallet.MainActivity
 import com.example.smultronstallet.R
 import com.example.smultronstallet.databinding.ActivitySignInBinding
-import com.example.smultronstallet.OwnerActivity
+import Owner.OwnerActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore

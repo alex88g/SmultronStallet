@@ -1,4 +1,4 @@
-package com.example.smultronstallet
+package Owner
 
 import android.content.Context
 import android.util.Log
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.smultronstallet.R
 
 class ReviewsRecycleAdapter(val context: Context, val reviews: List<Reviews> ) :
     RecyclerView.Adapter<ReviewsRecycleAdapter.ViewHolder>(){

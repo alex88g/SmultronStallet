@@ -14,6 +14,7 @@ import fragment.MapsFragment
 import fragment.ReviewFragment
 import fragment.SearchFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_review.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         cameraButton1.setOnClickListener{
             val intentCamerar = Intent(this, CameraActivity::class.java)
             startActivity(intentCamerar)

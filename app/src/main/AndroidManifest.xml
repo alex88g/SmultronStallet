@@ -34,7 +34,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".OwnerSendOfferActivity"
+            android:name="Owner.OwnerSendOfferActivity"
             android:exported="false"
             android:screenOrientation="portrait">
             <meta-data
@@ -42,7 +42,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".OwnerReviewsActivity"
+            android:name="Owner.OwnerReviewsActivity"
             android:exported="false"
             android:screenOrientation="portrait">
             <meta-data
@@ -50,7 +50,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".OwnerActivity"
+            android:name="Owner.OwnerActivity"
             android:exported="false"
             android:screenOrientation="portrait">
             <meta-data
