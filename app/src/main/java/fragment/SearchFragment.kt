@@ -21,7 +21,6 @@ class SearchFragment : Fragment() {
     lateinit var adapter : MyAdapter
     lateinit var recyclerView : RecyclerView
 
-    //lateinit var newsArrayList: ArrayList<News>
 
     val list = ArrayList<Place>()
 
