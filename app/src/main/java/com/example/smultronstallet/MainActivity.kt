@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             val intentCamerar = Intent(this, CameraActivity::class.java)
             startActivity(intentCamerar)
         }
-        replaceFragment(searchFragment)
+        replaceFragment(homeFragment)
 
         //PlaceList()
 
