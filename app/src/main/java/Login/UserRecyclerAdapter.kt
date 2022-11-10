@@ -43,7 +43,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Muta
 
         // sätt in den personens uppgifter i vår view
         holder.nameTextView.text = user.name
-        holder.phoneTextView.text = user.phone.toString()
+        holder.phoneTextView.text = user.phone
         holder.emailTextView.text = user.email
 
         // Här lägger vi imageURL

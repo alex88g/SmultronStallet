@@ -83,10 +83,7 @@ class SignUpActivity : AppCompatActivity() {
                     .add(item)
                     .addOnSuccessListener { documentReference ->
                         Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-                        val place1 = Place()
-                        db.collection("users").document(documentReference.id)
-                            .collection("places")
-                            .add(place1)
+
                     }
 
             }

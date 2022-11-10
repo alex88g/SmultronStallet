@@ -21,7 +21,7 @@ class SearchFragment : Fragment() {
     val db = Firebase.firestore
     lateinit var adapter : MyAdapter
     lateinit var recyclerView : RecyclerView
-    //lateinit var newsArrayList: ArrayList<News>
+
     val list = ArrayList<Place>()
 
 
@@ -61,12 +61,6 @@ class SearchFragment : Fragment() {
 
                     for (document in it.result){
                         val place = document.toObject<Place>()
-                       // val name = document.data["name"].toString()
-                       //// val lat = document.data["latitude"].toString().toDouble()
-                       //// val long = document.data["latitude"].toString().toDouble()
-                       //// val review = document.data["review"].toString()
-                       //// val imgUrl = document.data["imageURL"].toString()
-                       // val item = Place(name = name, latitude = lat,longitude = long, review = review,imageURL = imgUrl)
 
                         list.add(place)
                     }

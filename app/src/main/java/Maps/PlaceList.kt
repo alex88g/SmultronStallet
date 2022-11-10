@@ -92,27 +92,27 @@ init {
 
 
     }
-    fun getList(myCallback :(MutableList<User>) -> Unit) {
-        db.collection("users")
-            .get()
-            .addOnCompleteListener {
-                if(it.isSuccessful){
-                    val list = mutableListOf<User>()
-                    for (document in it.result){
-                        val name = document.data["name"].toString()
-                        val phone = document.data["phone"].toString()
-                        val documentId = document.data["docId"].toString()
-
-                        val email = document.data["email"].toString()
-                        val item = User(docId = documentId, name = name, email = email,phone = phone)
-
-                        list.add(item)
-                    }
-                    myCallback(list)
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d(ContentValues.TAG, "error gettingdocuments: ", exception)
-            }
-    }
+    //fun getList(myCallback :(MutableList<User>) -> Unit) {
+    //    db.collection("users")
+    //        .get()
+    //        .addOnCompleteListener {
+    //            if(it.isSuccessful){
+    //                val list = mutableListOf<User>()
+    //                for (document in it.result){
+    //                    val name = document.data["name"].toString()
+    //                    val phone = document.data["phone"].toString()
+    //                    val documentId = document.data["docId"].toString()
+//
+    //                    val email = document.data["email"].toString()
+    //                    val item = User(docId = documentId, name = name, email = email,phone = phone)
+//
+    //                    list.add(item)
+    //                }
+    //                myCallback(list)
+    //            }
+    //        }
+    //        .addOnFailureListener { exception ->
+    //            Log.d(ContentValues.TAG, "error gettingdocuments: ", exception)
+    //        }
+    //}
 }
