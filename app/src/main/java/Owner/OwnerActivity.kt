@@ -1,10 +1,11 @@
 
-package com.example.smultronstallet
+package Owner
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.smultronstallet.R
 
 class OwnerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

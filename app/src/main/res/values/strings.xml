@@ -15,30 +15,4 @@
 
     <string name="fragment_recycle">RecyckleFragment</string>
 
-    <string name="head_a">En bland dem godaste Chilensk mat</string>
-    <string name="head_b">En bland dem godaste Indisk mat </string>
-    <string name="head_c">En bland dem godaste Vietnamesisk mat </string>
-    <string name="head_d">En bland dem godaste Chinesisk mat</string>
-    <string name="head_e">En bland dem godaste Japansk mat</string>
-    <string name="head_f">En bland dem godaste Balkansk mat</string>
-    <string name="head_g">En bland dem godaste Libanesisk mat</string>
-    <string name="head_h">En bland dem godaste Rysk mat</string>
-    <string name="head_i">En bland dem godaste Italiensk mat</string>
-    <string name="head_j">En bland dem godaste Thai mat</string>
-
-    <string name="news_1">Information</string>
-    <string name="news_2">Information</string>
-    <string name="news_3">Information</string>
-    <string name="news_4">Information</string>
-    <string name="news_5">Information</string>
-    <string name="news_6">Information</string>
-    <string name="news_7">Information</string>
-    <string name="news_8">Information</string>
-    <string name="news_9">Information</string>
-    <string name="news_10">Information</string>
-    <string name="required">required</string>
-    <string name="type_your_email">Type Your Email</string>
-    <string name="type_your_password">Type Your Password</string>
-
-
 </resources>

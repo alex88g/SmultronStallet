@@ -12,9 +12,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_camera.*
-import kotlinx.android.synthetic.main.activity_camera2.*
 import kotlinx.android.synthetic.main.fragment_review.*
+
 
 private const val REQUEST_CODE = 42
 @Suppress("DEPRECATION")
@@ -25,9 +24,11 @@ class CameraActivity : AppCompatActivity() {
     lateinit var bTagg :EditText
     lateinit var buttonSave:Button
      var newListOfSmultron = mutableListOf<Place>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_camera2)
+        setContentView(R.layout.fragment_review)
+
         smultronPlats = smultronPlace1
         recenssion = ReviewS
         locationGps1 = locationGps
@@ -35,15 +36,14 @@ class CameraActivity : AppCompatActivity() {
         buttonSave = buttonSmultronSave
         val db = Firebase.firestore
         buttonSave.setOnClickListener {
-            var newSmultronPlace = Place(name = smultronPlats.text.toString(), review = recenssion.text.toString())
-            db.collection("newSmultronPlace").add(newSmultronPlace)
-            finish()
+
 
         }
 
         val takePicturesIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if (takePicturesIntent.resolveActivity(this.packageManager)!=null){
             startActivityForResult(takePicturesIntent, REQUEST_CODE)
+
         }else{ Toast.makeText(this,"Unable to open camera", Toast.LENGTH_SHORT).show()
 
         }
@@ -53,6 +53,7 @@ class CameraActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(requestCode== REQUEST_CODE && resultCode == Activity.RESULT_OK){
             val takenImage =  data?.extras?.get("data") as Bitmap
+
             imageView.setImageBitmap(takenImage)
         }else{
             super.onActivityResult(requestCode, resultCode, data)
