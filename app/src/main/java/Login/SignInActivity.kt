@@ -54,7 +54,7 @@ class SignInActivity : AppCompatActivity() {
             BusinessTextView.setHint("")
             BusinessTextView.setText(null)
             buttonSignin.setText("Företag logga in")
-            wellcomeView.setText("Välkommen, logga in till Smultronstället företag")
+            wellcomeView.setText("Välkommen till Smultronstället! \n Logga in på företagskonto här")
             emailEt.setHint("Företag e-post")
             passET.setHint("Lösenord")
             OwnerSignin.setBackgroundResource(android.R.color.transparent)
