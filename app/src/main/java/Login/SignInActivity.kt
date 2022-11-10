@@ -91,7 +91,7 @@ class SignInActivity : AppCompatActivity() {
                     .addOnCompleteListener {
                         if(it.isSuccessful){
                             Log.d("!!!","ownerCheck")
-                            Toast.makeText(applicationContext,"Exists",Toast.LENGTH_SHORT).show()
+                            //Toast.makeText(applicationContext,"Exists",Toast.LENGTH_SHORT).show()
                               //val document = it.result
 
                                 for(document in it.result) {
@@ -118,7 +118,7 @@ class SignInActivity : AppCompatActivity() {
                                 val intent = Intent(this, OwnerActivity::class.java)
                                 startActivity(intent)
                             } else if(!businessSignin){
-                                Toast.makeText(this, "Välkommen Till SmultronStället!", Toast.LENGTH_SHORT).show()
+                                //Toast.makeText(this, "Välkommen Till SmultronStället!", Toast.LENGTH_SHORT).show()
                                 val intent = Intent(this, MainActivity::class.java)
                                 startActivity(intent)
                             }
