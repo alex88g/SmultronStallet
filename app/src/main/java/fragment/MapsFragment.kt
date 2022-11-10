@@ -117,7 +117,7 @@ class MapsFragment : Fragment() {
         mapFragment?.getMapAsync(callback)
 
 
-        Toast.makeText(context, "Välkommen till Kartan", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, "Välkommen till Kartan", Toast.LENGTH_SHORT).show()
     }
 }
 

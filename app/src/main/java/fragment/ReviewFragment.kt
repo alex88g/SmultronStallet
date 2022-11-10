@@ -31,7 +31,7 @@ class ReviewFragment : Fragment() {
         startActivity(intentCamerar)
 
 
-            Toast.makeText(context, "Vällkommen till Recesion!", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, "Vällkommen till Recesion!", Toast.LENGTH_SHORT).show()
 
         }
     }
