@@ -3,6 +3,7 @@ package fragment
 
 import Login.User
 import Login.userAdapter
+import Maps.Place
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -51,19 +52,30 @@ class HomeFragment : Fragment() {
 fun dataInitialize(){
 
     db.collection("users")
-        .get()
-        .addOnCompleteListener {
-            if(it.isSuccessful){
+//        .get()
+//        .addOnCompleteListener {
+        .addSnapshotListener { snapshot, e ->
 
-                for (document in it.result){
+            if (snapshot != null) {
+                for (document in snapshot.documents) {
                     val user = document.toObject<User>()
-
-
-                    userList.add(user)
+                    if (user != null) {
+                        userList.add(user)
+                    }
+                    recyclerView.adapter?.notifyDataSetChanged()
                 }
-
-                recyclerView.adapter?.notifyDataSetChanged()
             }
+//            if(it.isSuccessful){
+//
+//                for (document in it.result){
+//                    val user = document.toObject<User>()
+//
+//
+//                    userList.add(user)
+//                }
+//
+//                recyclerView.adapter?.notifyDataSetChanged()
+//            }
         }
  }
 }

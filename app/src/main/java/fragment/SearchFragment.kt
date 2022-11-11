@@ -55,19 +55,30 @@ class SearchFragment : Fragment() {
     fun dataInitialize(){
 
         db.collection("places")
-            .get()
-            .addOnCompleteListener {
-                if(it.isSuccessful){
+            //.get()
+            //.addOnCompleteListener {
+            .addSnapshotListener { snapshot, e ->
 
-                    for (document in it.result){
+                if (snapshot != null) {
+                    for (document in snapshot.documents) {
                         val place = document.toObject<Place>()
-
-
-                        list.add(place)
+                        if (place != null) {
+                            list.add(place)
+                        }
+                        recyclerView.adapter?.notifyDataSetChanged()
                     }
-
-                    recyclerView.adapter?.notifyDataSetChanged()
-                }
+            }
+                //if(it.isSuccessful){
+                //
+                //    for (document in it.result){
+                    //        val place = document.toObject<Place>()
+                    //
+                    //
+                    //        list.add(place)
+                    //    }
+                //
+                //    recyclerView.adapter?.notifyDataSetChanged()
+                //}
             }
     }
 
