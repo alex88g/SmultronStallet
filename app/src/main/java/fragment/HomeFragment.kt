@@ -16,7 +16,7 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
 
-        Toast.makeText(context, "Välkommen Hem!",Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, "Välkommen Hem!",Toast.LENGTH_SHORT).show()
 
         }
 

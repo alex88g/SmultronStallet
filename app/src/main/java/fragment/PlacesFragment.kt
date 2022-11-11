@@ -40,7 +40,7 @@ class PlacesFragment : Fragment() {
         adapter = MyAdapter(container!!.context,list)
         recyclerView.adapter = adapter
 
-        Toast.makeText(context, "Välkommen att Söka!", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, "Välkommen att Söka!", Toast.LENGTH_SHORT).show()
 
         return view
     }

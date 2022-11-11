@@ -37,7 +37,7 @@ class ContactsFragment : Fragment() {
         adapter = userAdapter(container!!.context, userList)
         recyclerView.adapter = adapter
 
-        Toast.makeText(context, "Välkommen till Kontakter!",Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, "Välkommen till Kontakter!",Toast.LENGTH_SHORT).show()
 
         return view
     }
