@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import Maps.MyAdapter
 import Maps.Place
+import android.widget.Toast
 import com.example.smultronstallet.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -39,7 +40,7 @@ class PlacesFragment : Fragment() {
         adapter = MyAdapter(container!!.context,list)
         recyclerView.adapter = adapter
 
-        //Toast.makeText(context, "Välkommen att Söka!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Välkommen att Söka!", Toast.LENGTH_SHORT).show()
 
         return view
     }
