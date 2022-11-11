@@ -15,7 +15,7 @@
 
     <item
         android:id="@+id/ic_places"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/smul_png"
         android:iconTint="#FFFFFF"
         android:title="Platser" />
 
