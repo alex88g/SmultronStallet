@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private val contactsFragment = ContactsFragment()
     private val homeFragment = HomeFragment()
-    private val searchFragment = SearchFragment()
+    private val placesFragment = PlacesFragment()
     private val mapsFragment = MapsFragment()
     private val reviewFragment = ReviewFragment()
 
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.ic_home -> replaceFragment(homeFragment)
                 R.id.ic_contacts -> replaceFragment(contactsFragment)
-                R.id.ic_places -> replaceFragment(searchFragment)
+                R.id.ic_places -> replaceFragment(placesFragment)
                 R.id.ic_map -> replaceFragment(mapsFragment)
                 R.id.ic_rate_review -> replaceFragment(reviewFragment)
 
