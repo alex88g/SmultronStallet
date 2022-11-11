@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smultronstallet.R
@@ -19,8 +20,8 @@ import com.google.firebase.ktx.Firebase
 class ContactsFragment : Fragment() {
 
     val db = Firebase.firestore
-    lateinit var adapter : userAdapter
-    lateinit var recyclerView : RecyclerView
+    lateinit var adapter: userAdapter
+    lateinit var recyclerView: RecyclerView
     val userList = ArrayList<User>()
 
     override fun onCreateView(
@@ -33,10 +34,10 @@ class ContactsFragment : Fragment() {
         recyclerView = view.findViewById(R.id.userRecyclerView)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = userAdapter(container!!.context,userList)
+        adapter = userAdapter(container!!.context, userList)
         recyclerView.adapter = adapter
 
-        //Toast.makeText(context, "Välkommen Hem!",Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Välkommen till Kontakter!",Toast.LENGTH_SHORT).show()
 
         return view
     }
@@ -44,6 +45,8 @@ class ContactsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
     }
 
