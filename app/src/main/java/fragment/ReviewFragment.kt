@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.smultronstallet.CameraActivity
 import com.example.smultronstallet.R
+import kotlinx.android.synthetic.main.fragment_review.*
 
 
 class ReviewFragment : Fragment() {
@@ -22,17 +23,22 @@ class ReviewFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_review, container, false)
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-//        var intentCamerar = Intent(activity, CameraActivity::class.java)
-//        startActivity(intentCamerar)
-
-
-            Toast.makeText(context, "Vällkommen till Recesion!", Toast.LENGTH_SHORT).show()
-
+        cameraButton1.setOnClickListener{
+            val intentCamerar = Intent(activity, CameraActivity::class.java)
+            startActivity(intentCamerar)
         }
+
+
+        Toast.makeText(context, "Vällkommen till Recesion!", Toast.LENGTH_SHORT).show()
     }
+
+}
+
+
