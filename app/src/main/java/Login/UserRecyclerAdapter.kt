@@ -29,7 +29,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Arra
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = layoutInflater.inflate(R.layout.fragment_home, parent, false)
+        val itemView = layoutInflater.inflate(R.layout.fragment_contacts, parent, false)
         Log.d("!!!Adapter", "oncreateViewholder")
 
         return ViewHolder(itemView,mListener)

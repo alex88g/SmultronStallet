@@ -3,23 +3,31 @@
 
     <item
         android:id="@+id/ic_home"
+        android:icon="@drawable/hombtn"
+        android:iconTint="#FFFFFF"
+        android:title="Hem" />
+    <item
+        android:id="@+id/ic_contacts"
         android:icon="@drawable/ic_baseline_account_circle_24"
+        android:iconTint="#FFFFFF"
         android:title="Kontakter" />
 
 
-
     <item
-        android:id="@+id/ic_search"
-        android:icon="@drawable/ic_baseline_filter_vintage_24"
+        android:id="@+id/ic_places"
+        android:icon="@drawable/ic_search"
+        android:iconTint="#FFFFFF"
         android:title="Platser" />
 
     <item
         android:id="@+id/ic_map"
-        android:icon="@drawable/ic_baseline_location_on_24"
+        android:icon="@drawable/ic_map"
+        android:iconTint="#FFFFFF"
         android:title="Kartan" />
     <item
         android:id="@+id/ic_rate_review"
         android:icon="@drawable/ic_rate_review"
+        android:iconTint="#FFFFFF"
         android:title="Recension" />
 
 

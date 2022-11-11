@@ -9,20 +9,18 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import fragment.HomeFragment
-import fragment.MapsFragment
-import fragment.ReviewFragment
-import fragment.SearchFragment
+import fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_review.*
 
 
 class MainActivity : AppCompatActivity() {
 
+    private val contactsFragment = ContactsFragment()
     private val homeFragment = HomeFragment()
     private val searchFragment = SearchFragment()
     private val mapsFragment = MapsFragment()
     private val reviewFragment = ReviewFragment()
+
     lateinit var button : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +46,8 @@ class MainActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.ic_home -> replaceFragment(homeFragment)
-                R.id.ic_search -> replaceFragment(searchFragment)
+                R.id.ic_contacts -> replaceFragment(contactsFragment)
+                R.id.ic_places -> replaceFragment(searchFragment)
                 R.id.ic_map -> replaceFragment(mapsFragment)
                 R.id.ic_rate_review -> replaceFragment(reviewFragment)
 
