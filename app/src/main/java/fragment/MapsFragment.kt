@@ -117,34 +117,32 @@ class MapsFragment : Fragment() {
     //     Initializes contents of Activity's standard options menu. Only called the first time options
 //     menu is displayed.
 
-//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-//        super.onCreateOptionsMenu(menu, inflater)
-//        inflater.inflate(R.menu.map_options, menu)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        return when (item.itemId) {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.map_options, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when(item.itemId) {
 //             Change the map type based on the user's selection.
-//
-//            R.id. -> {
-//                mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
-//                true
-//            }
-//            R.id. -> {
-//                mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
-//                true
-//            }
-//            R.id. -> {
-//                mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
-//                true
-//            }
-//            R.id. -> {
-//                mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
-//                true
-//            }
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//    }
+
+            R.id.normal_map -> {
+                mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+                true
+            }
+            R.id.hybrid_map -> {
+                mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
+                true
+            }
+            R.id.satellite_map -> {
+                mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
+                true
+            }
+            R.id.terrain_map -> {
+                mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater,
