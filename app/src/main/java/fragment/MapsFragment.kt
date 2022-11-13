@@ -21,9 +21,12 @@ import com.google.firebase.ktx.Firebase
 import java.util.*
 
 
+//This class allows you to interact with the map by adding markers, styling its appearance and
+// displaying the user's location.
 class MapsFragment : Fragment() {
     val db = Firebase.firestore
     val list = ArrayList<MapsPlace>()
+    lateinit var mMap: GoogleMap
 
 
     @SuppressLint("MissingPermission")
@@ -32,8 +35,8 @@ class MapsFragment : Fragment() {
 
         mMap.isMyLocationEnabled = true
 
-
-        val stockholm = LatLng(59.3110, 18.0300)
+//These coordinates represent the lattitude and longitude of the It-Högskolan
+        val stockholm = LatLng(59.31102, 18.02979)
         val zoomLevel = 15f
 
         mMap.addMarker(
@@ -78,7 +81,7 @@ class MapsFragment : Fragment() {
             }
     }
 
-
+    // Called when user makes a long press gesture on the map.
     private fun setMapLongClick(map: GoogleMap) {
         map.setOnMapLongClickListener {
             val snippet = String.format(
@@ -102,12 +105,46 @@ class MapsFragment : Fragment() {
         }
     }
 
+    // Places a marker on the map and displays an info window that contains POI name.
     private fun setPoiClick(map: GoogleMap) {
         map.setOnPoiClickListener { point ->
             val poiMarker = map.addMarker(MarkerOptions().position(point.latLng).title(point.name))
             poiMarker!!.showInfoWindow()
         }
+
     }
+
+    //     Initializes contents of Activity's standard options menu. Only called the first time options
+//     menu is displayed.
+
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        super.onCreateOptionsMenu(menu, inflater)
+//        inflater.inflate(R.menu.map_options, menu)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return when (item.itemId) {
+//             Change the map type based on the user's selection.
+//
+//            R.id. -> {
+//                mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+//                true
+//            }
+//            R.id. -> {
+//                mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
+//                true
+//            }
+//            R.id. -> {
+//                mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
+//                true
+//            }
+//            R.id. -> {
+//                mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
+//                true
+//            }
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -116,22 +153,6 @@ class MapsFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_maps, container, false)
 
-    }
-    //     Initializes contents of Activity's standard options menu. Only called the first time options
-//     menu is displayed.
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.map_options, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-
-
-        }
-
-return super.onOptionsItemSelected(item)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
