@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smultronstallet.R
@@ -35,6 +36,12 @@ class ContactsFragment : Fragment() {
         recyclerView.setHasFixedSize(true)
         adapter = UserAdapter(container!!.context, userList)
         recyclerView.adapter = adapter
+
+        adapter.setOnItemClickListener(object : UserAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                Toast.makeText(context, "You clicked on user $position",Toast.LENGTH_SHORT).show()
+            }
+        })
 
         //Toast.makeText(context, "Välkommen till Kontakter!",Toast.LENGTH_SHORT).show()
 
