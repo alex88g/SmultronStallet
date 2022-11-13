@@ -15,9 +15,11 @@ class ForgotPasswordActivity : AppCompatActivity() {
         buttonSub.setOnClickListener {
             val email: String = emailFor.text.toString().trim { it <= ' ' }
             if (email.isEmpty()) {
-                Toast.makeText(this@ForgotPasswordActivity,
+                Toast.makeText(
+                    this@ForgotPasswordActivity,
                     "Please enter email address,",
-                    Toast.LENGTH_SHORT).show()
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 FirebaseAuth.getInstance().sendPasswordResetEmail(email)
                     .addOnCompleteListener { task ->
@@ -25,13 +27,15 @@ class ForgotPasswordActivity : AppCompatActivity() {
                             Toast.makeText(
                                 this@ForgotPasswordActivity,
                                 "Email sent succesfully to reset your password!",
-                                Toast.LENGTH_SHORT).show()
+                                Toast.LENGTH_SHORT
+                            ).show()
                             finish()
-                        }else{
+                        } else {
                             Toast.makeText(
                                 this@ForgotPasswordActivity,
                                 task.exception!!.message.toString(),
-                                Toast.LENGTH_SHORT).show()
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
             }

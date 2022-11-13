@@ -1,7 +1,6 @@
 package Maps
 
 
-import Login.User
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -13,14 +12,15 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.smultronstallet.R
 
-class MyAdapter( val context: Context,val list : ArrayList<Place>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
-
-
+class MapsAdapter(val context: Context, val list: ArrayList<MapsPlace>) :
+    RecyclerView.Adapter<MapsAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_layout,
-            parent,false)
+        val itemView = LayoutInflater.from(parent.context).inflate(
+            R.layout.card_layout,
+            parent, false
+        )
         return MyViewHolder(itemView)
 
     }
@@ -43,15 +43,14 @@ class MyAdapter( val context: Context,val list : ArrayList<Place>) : RecyclerVie
     }
 
 
-
     override fun getItemCount(): Int {
         return list.size
     }
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val titleName : TextView = itemView.findViewById(R.id.itemTitle)
-        val infoReview : TextView = itemView.findViewById(R.id.itemDetail)
+        val titleName: TextView = itemView.findViewById(R.id.itemTitle)
+        val infoReview: TextView = itemView.findViewById(R.id.itemDetail)
         var placeImage = itemView.findViewById<ImageView>(R.id.itemImage)
     }
 }

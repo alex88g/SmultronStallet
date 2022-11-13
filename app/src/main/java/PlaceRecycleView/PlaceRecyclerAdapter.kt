@@ -1,6 +1,6 @@
-package Login
+package PlaceRecycleView
 
-import Maps.Place
+import Maps.MapsPlace
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smultronstallet.R
 
-class PlaceRecyclerAdapter(val context: Context, val places: MutableList<Place>):
+class PlaceRecyclerAdapter(val context: Context, val places: MutableList<MapsPlace>):
     RecyclerView.Adapter<PlaceRecyclerAdapter.ViewHolder>() {
 
 
@@ -36,7 +36,7 @@ class PlaceRecyclerAdapter(val context: Context, val places: MutableList<Place>)
         return ViewHolder(itemView, mListener)
     }
 
-    override fun onBindViewHolder(holder: PlaceRecyclerAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Log.d("!!!Adapter", "onbindviewholder")
 
         // när en list_view ska visas så tar vi rätt person från vår lista

@@ -18,7 +18,7 @@
         android:theme="@style/Theme.SmultronStallet"
         tools:targetApi="31">
         <activity
-            android:name="Login.PlaceRecycleActivity"
+            android:name="PlaceRecycleView.PlaceRecycleActivity"
             android:exported="false"
             android:screenOrientation="portrait">
             <meta-data

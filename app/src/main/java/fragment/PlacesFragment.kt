@@ -8,9 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import Maps.MyAdapter
-import Maps.Place
-import android.widget.Toast
+import Maps.MapsAdapter
+import Maps.MapsPlace
 import com.example.smultronstallet.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -18,13 +17,11 @@ import com.google.firebase.ktx.Firebase
 
 class PlacesFragment : Fragment() {
     val db = Firebase.firestore
-    lateinit var adapter : MyAdapter
-    lateinit var recyclerView : RecyclerView
+    lateinit var adapter: MapsAdapter
+    lateinit var recyclerView: RecyclerView
 
 
-    val list = ArrayList<Place>()
-
-
+    val list = ArrayList<MapsPlace>()
 
 
     override fun onCreateView(
@@ -37,7 +34,7 @@ class PlacesFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = MyAdapter(container!!.context,list)
+        adapter = MapsAdapter(container!!.context, list)
         recyclerView.adapter = adapter
 
         //Toast.makeText(context, "Välkommen att Söka!", Toast.LENGTH_SHORT).show()
@@ -52,15 +49,15 @@ class PlacesFragment : Fragment() {
     }
 
 
-    fun dataInitialize(){
+    fun dataInitialize() {
 
         db.collection("places")
             .get()
             .addOnCompleteListener {
-                if(it.isSuccessful){
+                if (it.isSuccessful) {
 
-                    for (document in it.result){
-                        val place = document.toObject<Place>()
+                    for (document in it.result) {
+                        val place = document.toObject<MapsPlace>()
 
 
                         list.add(place)
