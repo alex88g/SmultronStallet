@@ -11,11 +11,19 @@ import com.example.smultronstallet.R
 
 class userAdapter(private val context: Context, val userList : ArrayList<User>) : RecyclerView.Adapter<userAdapter.MyViewHolder>() {
 
+    private lateinit var mListener : onItemClickListener
+    interface onItemClickListener{
+        fun onItemClick(position : Int)
+    }
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.userlist_item,
             parent,false)
-        return MyViewHolder(itemView)
+        return MyViewHolder(itemView,mListener)
 
     }
 
@@ -31,10 +39,18 @@ class userAdapter(private val context: Context, val userList : ArrayList<User>) 
         return userList.size
     }
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView: View,listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
 
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
         var phoneTextView = itemView.findViewById<TextView>(R.id.phoneTextView)
         var emailTextView = itemView.findViewById<TextView>(R.id.emailTextView)
+
+        init {
+
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
+
+        }
     }
 }

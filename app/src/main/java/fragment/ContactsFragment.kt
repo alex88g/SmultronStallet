@@ -37,6 +37,12 @@ class ContactsFragment : Fragment() {
         adapter = userAdapter(container!!.context, userList)
         recyclerView.adapter = adapter
 
+        adapter.setOnItemClickListener(object : userAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                Toast.makeText(context, "You clicked on user $position",Toast.LENGTH_SHORT).show()
+            }
+        })
+
         //Toast.makeText(context, "Välkommen till Kontakter!",Toast.LENGTH_SHORT).show()
 
         return view
