@@ -13,7 +13,7 @@ class OwnerSendOfferActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_owner_send_offer)
+
         //val sendOfferBtn = findViewById<Button>(R.id.sendButton)
 
         val intent = Intent(Intent.ACTION_SENDTO) // it's not ACTION_SEND

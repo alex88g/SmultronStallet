@@ -68,68 +68,68 @@ class SignInActivity : AppCompatActivity() {
         }
 
         binding.textView.setOnClickListener {
-            val business : Boolean = false
+            val business: Boolean = false
             val intent = Intent(this, SignUpActivity::class.java)
-            intent.putExtra("business",business)
+            intent.putExtra("business", business)
             startActivity(intent)
 
         }
         binding.BusinessTextView.setOnClickListener {
-            val business : Boolean = true
+            val business: Boolean = true
             val intent = Intent(this, SignUpActivity::class.java)
-            intent.putExtra("business",business)
+            intent.putExtra("business", business)
             startActivity(intent)
 
         }
 
-            binding.buttonSignin.setOnClickListener {
-                val email = binding.emailEt.text.toString()
-                val password = binding.passET.text.toString()
-                val ownerCheck = db.collection("owners").whereEqualTo("email", email)
-                ownerCheck
-                    .get()
-                    .addOnCompleteListener {
-                        if(it.isSuccessful){
-                            Log.d("!!!","ownerCheck")
-                            //Toast.makeText(applicationContext,"Exists",Toast.LENGTH_SHORT).show()
-                              //val document = it.result
+        binding.buttonSignin.setOnClickListener {
+            val email = binding.emailEt.text.toString()
+            val password = binding.passET.text.toString()
+            val ownerCheck = db.collection("owners").whereEqualTo("email", email)
+            ownerCheck
+                .get()
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        Log.d("!!!", "ownerCheck")
+                        //Toast.makeText(applicationContext,"Exists",Toast.LENGTH_SHORT).show()
+                        //val document = it.result
 
-                                for(document in it.result) {
-                                    val emailcheck = document.data["email"].toString()
-                                    if(email == emailcheck) {
-                                        businessSignin = true
-                                    }
-                                }
-
-
-
-                            Log.d("!!!","businessSignin = $businessSignin")
-                        }
-                    }
-                    .addOnFailureListener { exception ->
-                        Log.d(ContentValues.TAG, "Kontot matchar inte!", exception)
-                    }
-                if (email.isNotEmpty() && password.isNotEmpty()) {
-
-
-                    auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            if(businessSignin) {
-                                val intent = Intent(this, OwnerActivity::class.java)
-                                startActivity(intent)
-                            } else if(!businessSignin){
-                                //Toast.makeText(this, "Välkommen Till SmultronStället!", Toast.LENGTH_SHORT).show()
-                                val intent = Intent(this, MainActivity::class.java)
-                                startActivity(intent)
+                        for (document in it.result) {
+                            val emailcheck = document.data["email"].toString()
+                            if (email == emailcheck) {
+                                businessSignin = true
                             }
-                        } else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                         }
-                    }
-                } else {
-                    Toast.makeText(this, "Tomma fält är inte tillåtna!!", Toast.LENGTH_SHORT).show()
 
+
+
+                        Log.d("!!!", "businessSignin = $businessSignin")
+                    }
                 }
+                .addOnFailureListener { exception ->
+                    Log.d(ContentValues.TAG, "Kontot matchar inte!", exception)
+                }
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+
+
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        if (businessSignin) {
+                            val intent = Intent(this, OwnerActivity::class.java)
+                            startActivity(intent)
+                        } else if (!businessSignin) {
+                            //Toast.makeText(this, "Välkommen Till SmultronStället!", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                        }
+                    } else {
+                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
+                Toast.makeText(this, "Tomma fält är inte tillåtna!!", Toast.LENGTH_SHORT).show()
+
             }
+        }
     }
 }

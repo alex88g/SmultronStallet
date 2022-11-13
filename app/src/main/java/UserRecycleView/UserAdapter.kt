@@ -1,4 +1,4 @@
-package Login
+package UserRecycleView
 
 
 import android.content.Context
@@ -9,12 +9,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smultronstallet.R
 
-class userAdapter(private val context: Context, val userList : ArrayList<User>) : RecyclerView.Adapter<userAdapter.MyViewHolder>() {
+class UserAdapter(private val context: Context, val userList: ArrayList<User>) :
+    RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.userlist_item,
-            parent,false)
+            parent, false
+        )
         return MyViewHolder(itemView)
 
     }
@@ -27,11 +29,12 @@ class userAdapter(private val context: Context, val userList : ArrayList<User>) 
         holder.phoneTextView.text = user.phone.toString()
         holder.emailTextView.text = user.email
     }
+
     override fun getItemCount(): Int {
         return userList.size
     }
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
         var phoneTextView = itemView.findViewById<TextView>(R.id.phoneTextView)

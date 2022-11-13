@@ -1,6 +1,7 @@
 package Login
 
 
+import UserRecycleView.User
 import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -39,7 +40,7 @@ class SignUpActivity : AppCompatActivity() {
 
         //business Login!
         val businessAcount = intent.getBooleanExtra("business", false)
-        if(businessAcount){
+        if (businessAcount) {
             userName.hint = "Användarnamn"
             emailEt.hint = "E-post"
 
@@ -68,14 +69,14 @@ class SignUpActivity : AppCompatActivity() {
             val phoneNR = phonenr.text.toString()
 
             // add to Database
-            if(businessAcount){
+            if (businessAcount) {
                 val item = User(name = username, email = email, phone = phoneNR)
                 db.collection("owners")
                     .add(item)
                     .addOnSuccessListener { documentReference ->
                         Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
                     }
-            }else if(!businessAcount){
+            } else if (!businessAcount) {
                 val item = User(name = username, email = email, phone = phoneNR)
                 db.collection("users")
                     .add(item)

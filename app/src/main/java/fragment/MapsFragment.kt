@@ -1,16 +1,17 @@
 package fragment
-import Maps.Place
+
+import Maps.MapsPlace
 import android.annotation.SuppressLint
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import com.example.smultronstallet.R
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.database.ktx.database
@@ -22,12 +23,14 @@ import java.util.*
 
 class MapsFragment : Fragment() {
     val db = Firebase.firestore
-    val list = ArrayList<Place>()
+    val list = ArrayList<MapsPlace>()
+
 
     @SuppressLint("MissingPermission")
     val callback = OnMapReadyCallback { mMap: GoogleMap ->
-        mMap.isMyLocationEnabled = true
 
+
+        mMap.isMyLocationEnabled = true
 
 
         val stockholm = LatLng(59.3110, 18.0300)
@@ -40,37 +43,36 @@ class MapsFragment : Fragment() {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(stockholm, zoomLevel))
 
         getList {
-            for (document in it){
+            for (document in it) {
                 val lat = document.latitude!!
                 val long = document.longitude!!
-                val location2 = LatLng(lat,long)
-                mMap.addMarker(MarkerOptions().position(location2).title(document.name).snippet(document.review)
+                val location2 = LatLng(lat, long)
+                mMap.addMarker(
+                    MarkerOptions().position(location2).title(document.name)
+                        .snippet(document.review)
                 )
 
             }
         }
-
-
-
         setMapLongClick(mMap)
         setPoiClick(mMap)
 
     }
 
-    fun getList(myCallback :(MutableList<Place>) -> Unit){
+    fun getList(myCallback: (MutableList<MapsPlace>) -> Unit) {
 
         db.collection("places")
             .get()
             .addOnCompleteListener {
-                if(it.isSuccessful){
+                if (it.isSuccessful) {
 
-                    for (document in it.result){
-                        val place = document.toObject<Place>()
+                    for (document in it.result) {
+                        val place = document.toObject<MapsPlace>()
 
 
                         list.add(place)
                     }
-    myCallback(list)
+                    myCallback(list)
 
                 }
             }
@@ -84,7 +86,11 @@ class MapsFragment : Fragment() {
                 it.latitude,
                 it.longitude
             )
-            map.addMarker(MarkerOptions().position(it).title("Marker here").snippet(snippet))
+            map.addMarker(
+                MarkerOptions().position(it).title(getString(R.string.dropped_pin)).snippet(snippet)
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+            )
+
 
             val database =
                 Firebase.database("https://smultronstalletdatabase-default-rtdb.firebaseio.com")

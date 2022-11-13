@@ -14,5 +14,6 @@
     <string name="login_failed">"Login failed"</string>
 
     <string name="fragment_recycle">RecyckleFragment</string>
+    <string name="dropped_pin">dropped_pin</string>
 
 </resources>

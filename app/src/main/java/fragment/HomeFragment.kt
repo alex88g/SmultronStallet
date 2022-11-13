@@ -9,7 +9,6 @@ import android.widget.Toast
 import com.example.smultronstallet.R
 
 
-
 class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +17,7 @@ class HomeFragment : Fragment() {
 
         //Toast.makeText(context, "Välkommen Hem!",Toast.LENGTH_SHORT).show()
 
-        }
+    }
 
 
     override fun onCreateView(

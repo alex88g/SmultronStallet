@@ -1,4 +1,4 @@
-package Login
+package UserRecycleView
 
 import android.content.Context
 import android.util.Log
@@ -9,20 +9,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smultronstallet.R
 
-class UserRecyclerAdapter (private val context: Context, private val users: ArrayList<User>) :
+class UserRecyclerAdapter(private val context: Context, private val users: ArrayList<User>) :
 
-    RecyclerView.Adapter<UserRecyclerAdapter.ViewHolder>(){
+    RecyclerView.Adapter<UserRecyclerAdapter.ViewHolder>() {
 
 
     val layoutInflater = LayoutInflater.from(context)
-    private lateinit var mListener : onItemClickListener
+    private lateinit var mListener: onItemClickListener
 
-    interface onItemClickListener{
+    interface onItemClickListener {
 
-        fun onItemClick(position : Int)
+        fun onItemClick(position: Int)
     }
 
-    fun setOnItemClickListener(listener: onItemClickListener){
+    fun setOnItemClickListener(listener: onItemClickListener) {
 
         mListener = listener
 
@@ -32,7 +32,7 @@ class UserRecyclerAdapter (private val context: Context, private val users: Arra
         val itemView = layoutInflater.inflate(R.layout.fragment_contacts, parent, false)
         Log.d("!!!Adapter", "oncreateViewholder")
 
-        return ViewHolder(itemView,mListener)
+        return ViewHolder(itemView, mListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -46,25 +46,14 @@ class UserRecyclerAdapter (private val context: Context, private val users: Arra
         holder.phoneTextView.text = user.phone
         holder.emailTextView.text = user.email
 
-        // Här lägger vi imageURL
-        //var imageUrl = currentItem.imageURL
-
-        //val radius = 30
-        //val margin = 10
-        //Glide.with(context)
-        //    .load(imageURL)
-        //    .error(R.drawable.ic_launcher_background)
-        //    .centerCrop()
-        //    .transform(RoundedCorners(radius))
-        //    .into(holder.menuImage)
-
     }
 
     override fun getItemCount(): Int {
         return users.size
     }
 
-    inner class ViewHolder(itemView : View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View, listener: onItemClickListener) :
+        RecyclerView.ViewHolder(itemView) {
         // när en viewholder skapas letar vi reda på två textvews som finns inne i vår itemview
         // (vår itemview är skapad utifrån vår list_item layout
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)

@@ -15,8 +15,6 @@ import kotlinx.android.synthetic.main.fragment_review.*
 class ReviewFragment : Fragment() {
 
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -30,7 +28,7 @@ class ReviewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        cameraButton1.setOnClickListener{
+        cameraButton1.setOnClickListener {
             val intentCamerar = Intent(activity, CameraActivity::class.java)
             startActivity(intentCamerar)
         }

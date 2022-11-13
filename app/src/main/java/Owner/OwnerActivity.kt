@@ -1,4 +1,3 @@
-
 package Owner
 
 import android.content.Intent
@@ -13,19 +12,19 @@ class OwnerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_owner)
 
         val logOutBtn = findViewById<Button>(R.id.logOutBtn)
-        logOutBtn.setOnClickListener{
+        logOutBtn.setOnClickListener {
             val intent = Intent(this, Login.SignInActivity::class.java)
             startActivity(intent)
         }
 
         val sendofferBtn = findViewById<Button>(R.id.sendOfferBtn)
-        sendofferBtn.setOnClickListener{
+        sendofferBtn.setOnClickListener {
             val intent = Intent(this, OwnerSendOfferActivity::class.java)
             startActivity(intent)
         }
 
         val showReviewsBtn = findViewById<Button>(R.id.showReviewsBtn)
-        showReviewsBtn.setOnClickListener{
+        showReviewsBtn.setOnClickListener {
             val intent = Intent(this, OwnerReviewsActivity::class.java)
             startActivity(intent)
         }

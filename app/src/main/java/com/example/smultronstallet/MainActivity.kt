@@ -1,20 +1,14 @@
 package com.example.smultronstallet
 
 
-
-
 import Login.SignInActivity
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_review.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private val mapsFragment = MapsFragment()
     private val reviewFragment = ReviewFragment()
 
-    lateinit var button : Button
+    lateinit var button: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         bottom_navigation.setOnNavigationItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.ic_home -> replaceFragment(homeFragment)
                 R.id.ic_contacts -> replaceFragment(contactsFragment)
                 R.id.ic_places -> replaceFragment(placesFragment)
