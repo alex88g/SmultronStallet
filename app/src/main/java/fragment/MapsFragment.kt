@@ -78,6 +78,7 @@ class MapsFragment : Fragment() {
             }
     }
 
+
     private fun setMapLongClick(map: GoogleMap) {
         map.setOnMapLongClickListener {
             val snippet = String.format(
@@ -115,6 +116,22 @@ class MapsFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_maps, container, false)
 
+    }
+    //     Initializes contents of Activity's standard options menu. Only called the first time options
+//     menu is displayed.
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.map_options, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+
+
+        }
+
+return super.onOptionsItemSelected(item)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
