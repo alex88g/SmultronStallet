@@ -3,6 +3,7 @@ package fragment
 
 import UserRecycleView.User
 import UserRecycleView.UserAdapter
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,7 +40,13 @@ class ContactsFragment : Fragment() {
 
         adapter.setOnItemClickListener(object : UserAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(context, "You clicked on user $position",Toast.LENGTH_SHORT).show()
+                val clickedUserID = userList[position].docId.toString()
+                val bundle = Bundle()
+                bundle.putString("data",clickedUserID)
+                val fragment= MapsFragment()
+                fragment.arguments = bundle
+                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container,fragment)?.commit()
+                Toast.makeText(context, "You clicked on user $clickedUserID",Toast.LENGTH_SHORT).show()
             }
         })
 

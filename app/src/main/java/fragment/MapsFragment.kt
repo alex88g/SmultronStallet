@@ -2,9 +2,11 @@ package fragment
 
 import Maps.MapsPlace
 import android.annotation.SuppressLint
+import android.content.Intent.getIntent
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import com.example.smultronstallet.R
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -15,6 +17,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -27,6 +30,8 @@ class MapsFragment : Fragment() {
     val db = Firebase.firestore
     val list = ArrayList<MapsPlace>()
     lateinit var mMap: GoogleMap
+
+
 
 
     @SuppressLint("MissingPermission")
@@ -46,6 +51,7 @@ class MapsFragment : Fragment() {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(stockholm, zoomLevel))
 
         getList {
+            //Toast.makeText(context, "intent docID : $docID", Toast.LENGTH_SHORT).show()
             for (document in it) {
                 val lat = document.latitude!!
                 val long = document.longitude!!
@@ -63,22 +69,61 @@ class MapsFragment : Fragment() {
     }
 
     fun getList(myCallback: (MutableList<MapsPlace>) -> Unit) {
+        val args = this.arguments
+        val inputData = args?.get("data")
+        if (inputData != null) {
+            db.collection("users")
+                .document("$inputData")
+                .get()
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        val userName = it.result["name"].toString()
 
-        db.collection("places")
-            .get()
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
 
-                    for (document in it.result) {
-                        val place = document.toObject<MapsPlace>()
+                        //  val user = snapshot.toObject<User>()
+                        Toast.makeText(
+                            context,
+                            "inputData: $inputData name : $userName",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
 
-
-                        list.add(place)
                     }
-                    myCallback(list)
-
                 }
-            }
+
+            db.collection("users").document("$inputData")
+                .collection("smultrons")
+                .get()
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+
+                        for (document in it.result) {
+                            val place = document.toObject<MapsPlace>()
+
+
+                            list.add(place)
+                        }
+                        myCallback(list)
+
+                    }
+                }
+        } else if(inputData == null) {
+             db.collection("places")
+                 .get()
+                 .addOnCompleteListener {
+                     if (it.isSuccessful) {
+
+                         for (document in it.result) {
+                             val place = document.toObject<MapsPlace>()
+
+
+                             list.add(place)
+                         }
+                         myCallback(list)
+
+                     }
+                 }
+        }
     }
 
     // Called when user makes a long press gesture on the map.
@@ -159,7 +204,7 @@ class MapsFragment : Fragment() {
         mapFragment?.getMapAsync(callback)
 
 
-        //Toast.makeText(context, "Välkommen till Kartan", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, "intent docID : $docID", Toast.LENGTH_SHORT).show()
     }
 }
 
