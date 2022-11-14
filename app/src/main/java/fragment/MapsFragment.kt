@@ -39,6 +39,7 @@ class MapsFragment : Fragment() {
 
 
         mMap.isMyLocationEnabled = true
+        mMap.uiSettings.isZoomControlsEnabled = true
 
 //These coordinates represent the lattitude and longitude of the It-Högskolan
 
