@@ -47,9 +47,9 @@ class SignInActivity : AppCompatActivity() {
 
         binding.OwnerSignin.setOnClickListener {
 
-            textView.setEnabled(false)
-            textView.setHint("")
-            textView.setText(null)
+            ownerTextView.setEnabled(false)
+            ownerTextView.setHint("")
+            ownerTextView.setText(null)
             BusinessTextView.setEnabled(false)
             BusinessTextView.setHint("")
             BusinessTextView.setText(null)
@@ -68,7 +68,7 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.textView.setOnClickListener {
+        binding.ownerTextView.setOnClickListener {
             val business: Boolean = false
             val intent = Intent(this, SignUpActivity::class.java)
             intent.putExtra("business", business)

@@ -9,7 +9,7 @@ import com.example.smultronstallet.R
 class OwnerReviewsActivity : AppCompatActivity() {
 
     var reviews = mutableListOf<OwnerReviews>(
-        OwnerReviews("Anna", "Det här var skitgott!!!!!", "annas.kossa@hotmail.com"),
+        OwnerReviews("Alex", "Jättegod pasta med tryffelsalami och björnbär. Rekommenderar absolut.", "alex.kossa@hotmail.com"),
         OwnerReviews(
             "Ernesto",
             "Väldigt smakrikt och en bra upplevelse. Otrevlig personal med konstiga skor!",
@@ -17,14 +17,28 @@ class OwnerReviewsActivity : AppCompatActivity() {
         ),
         OwnerReviews(
             "Fredde",
-            "Jag trivs så bra i denna skog, jag sitter alltid här och tänker på när jag var liten och allt var så himla roligt t.ex. att plocka kottar. Tack!",
+            "Jag gillar denna resturang massor, jag sitter alltid här och fantiserara att jag är i skogen och äter kottar. Rekommenderar till alla.",
             "freddearcool@gmail.com"
         ),
         OwnerReviews(
             "Olivia",
-            "Så kul att få vara tillbaka här! Jag är här varje år och trivs så himla bra. Guuuud vad gott det var med frälst potatis.",
+            "Så kul att få vara tillbaka här! Jag och min familj äter julbord här varje påsk. Så himlans gott måste jag säga. Min 4-åring gillade potatisen.",
             "solveig.karlsson@hotmail.com"
-        )
+        ),
+        OwnerReviews(
+            "Hugo",
+            "Jag rekommenderar alla att gå hit innan klockan 11 för att ta del av deras fina brunchbuffé. Fräscht och gott! Bra med barnförbudet innan 12.",
+            "hugopugolugo@hotmail.com"
+        ),
+        OwnerReviews(
+            "Anna",
+            "Gott och nyttigt. Synd att proteinshaken var slut, men gott med en kladdkaka istället.",
+            "annapannoooooo.larsson@hotmail.com"
+        ),
+        OwnerReviews(
+            "Zilola",
+            "Fantastiskt fin plats med stora fönsterpartier som gör det lätt att njuta av utsikten och sin kaffe! Tack. Spenderar mycket tid här och läser om blommor.",
+            "ziloololi@hotmail.com")
     )
 
 
