@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
 
 
         android:id="@+id/bottom_navigation"
@@ -23,31 +23,31 @@
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-
     <FrameLayout
 
         android:id="@+id/fragment_container"
-        android:layout_width="410dp"
-        android:layout_height="616dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
         android:background="#75DDB2C1"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="1.0">
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+        
     </FrameLayout>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#DC648C"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,7 +55,7 @@
         android:id="@+id/buttonLog"
         android:layout_width="33dp"
         android:layout_height="34dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/ic_login"
         android:textColor="#FFFFFF"
         android:textSize="8sp"
@@ -70,25 +70,15 @@
         android:id="@+id/Signout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="19dp"
         android:layout_marginEnd="5dp"
         android:text="Logga ut"
+
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/buttonLog"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/cameraButton1"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#DC648C"
-        app:itemIconTint="#fff"
-        app:itemTextColor="#fff"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_camera"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

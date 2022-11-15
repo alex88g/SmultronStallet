@@ -1,6 +1,6 @@
-package Login
+package PlaceRecycleView
 
-import Maps.Place
+import Maps.MapsPlace
 import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -27,7 +27,7 @@ class PlaceRecycleActivity : AppCompatActivity() {
 
             val adapter = PlaceRecyclerAdapter(this,it)
             recyclerView.adapter = adapter
-            adapter.setOnItemClickListener(object : PlaceRecyclerAdapter.onItemClickListener{
+            adapter.setOnItemClickListener(object : PlaceRecyclerAdapter.onItemClickListener {
                 override fun onItemClick(position: Int) {
                     val intent = Intent(this@PlaceRecycleActivity, MainActivity::class.java)
                     startActivity(intent)
@@ -39,19 +39,19 @@ class PlaceRecycleActivity : AppCompatActivity() {
     }
 
 
-fun getList(myCallback :(MutableList<Place>) -> Unit) {
+fun getList(myCallback :(MutableList<MapsPlace>) -> Unit) {
     db.collection("places")
         .get()
         .addOnCompleteListener {
             if(it.isSuccessful){
-                val list = mutableListOf<Place>()
+                val list = mutableListOf<MapsPlace>()
                 for (document in it.result){
                     val name = document.data["name"].toString()
                     val lat = document.data["latitude"].toString().toDouble()
                     val long = document.data["latitude"].toString().toDouble()
                     val review = document.data["review"].toString()
                     val imgUrl = document.data["imageURL"].toString()
-                    val item = Place(name = name, latitude = lat,longitude = long, review = review,imageURL = imgUrl)
+                    val item = MapsPlace(name = name, latitude = lat,longitude = long, review = review,imageURL = imgUrl)
 
                     list.add(item)
                 }

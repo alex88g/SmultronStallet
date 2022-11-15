@@ -8,11 +8,23 @@ import com.example.smultronstallet.R
 
 class OwnerReviewsActivity : AppCompatActivity() {
 
-    var reviews = mutableListOf<Reviews>(
-        Reviews("Anna","Det här var skitgott!!!!!", "annas.kossa@hotmail.com"),
-        Reviews("Ernesto", "Väldigt smakrikt och en bra upplevelse. Otrevlig personal med konstiga skor!", "cykel@traktos.se"),
-        Reviews("Fredde", "Jag trivs så bra i denna skog, jag sitter alltid här och tänker på när jag var liten och allt var så himla roligt t.ex. att plocka kottar. Tack!", "freddearcool@gmail.com"),
-        Reviews("Olivia", "Så kul att få vara tillbaka här! Jag är här varje år och trivs så himla bra. Guuuud vad gott det var med frälst potatis.", "solveig.karlsson@hotmail.com")
+    var reviews = mutableListOf<OwnerReviews>(
+        OwnerReviews("Anna", "Det här var skitgott!!!!!", "annas.kossa@hotmail.com"),
+        OwnerReviews(
+            "Ernesto",
+            "Väldigt smakrikt och en bra upplevelse. Otrevlig personal med konstiga skor!",
+            "cykel@traktos.se"
+        ),
+        OwnerReviews(
+            "Fredde",
+            "Jag trivs så bra i denna skog, jag sitter alltid här och tänker på när jag var liten och allt var så himla roligt t.ex. att plocka kottar. Tack!",
+            "freddearcool@gmail.com"
+        ),
+        OwnerReviews(
+            "Olivia",
+            "Så kul att få vara tillbaka här! Jag är här varje år och trivs så himla bra. Guuuud vad gott det var med frälst potatis.",
+            "solveig.karlsson@hotmail.com"
+        )
     )
 
 
@@ -24,7 +36,7 @@ class OwnerReviewsActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // skapade vi en adapter från vår adapter-klass och skickar med vår lista av personer
-        val adapter = ReviewsRecycleAdapter(this, reviews)
+        val adapter = OwnerRecycleAdapter(this, reviews)
 
         // koppla ihop vår adapter med recyclerviewn
         recyclerView.adapter = adapter

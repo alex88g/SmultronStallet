@@ -1,6 +1,6 @@
 package com.example.smultronstallet
 
-import Maps.Place
+import Maps.MapsPlace
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
@@ -16,18 +16,21 @@ import kotlinx.android.synthetic.main.fragment_review.*
 
 
 private const val REQUEST_CODE = 42
+
 @Suppress("DEPRECATION")
 class CameraActivity : AppCompatActivity() {
-    lateinit var smultronPlats:EditText
-    lateinit var recenssion:EditText
-    lateinit var  locationGps1:EditText
-    lateinit var bTagg :EditText
-    lateinit var buttonSave:Button
-     var newListOfSmultron = mutableListOf<Place>()
+    lateinit var smultronPlats: EditText
+    lateinit var recenssion: EditText
+    lateinit var locationGps1: EditText
+    lateinit var bTagg: EditText
+    lateinit var buttonSave: Button
+    var newListOfSmultron = mutableListOf<MapsPlace>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_review)
+
+
 
         smultronPlats = smultronPlace1
         recenssion = ReviewS
@@ -41,21 +44,22 @@ class CameraActivity : AppCompatActivity() {
         }
 
         val takePicturesIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        if (takePicturesIntent.resolveActivity(this.packageManager)!=null){
+        if (takePicturesIntent.resolveActivity(this.packageManager) != null) {
             startActivityForResult(takePicturesIntent, REQUEST_CODE)
 
-        }else{ Toast.makeText(this,"Unable to open camera", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Unable to open camera", Toast.LENGTH_SHORT).show()
 
         }
 
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if(requestCode== REQUEST_CODE && resultCode == Activity.RESULT_OK){
-            val takenImage =  data?.extras?.get("data") as Bitmap
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val takenImage = data?.extras?.get("data") as Bitmap
 
             imageView.setImageBitmap(takenImage)
-        }else{
+        } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
 

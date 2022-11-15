@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smultronstallet.R
 
-class ReviewsRecycleAdapter(val context: Context, val reviews: List<Reviews> ) :
-    RecyclerView.Adapter<ReviewsRecycleAdapter.ViewHolder>(){
+class OwnerRecycleAdapter(val context: Context, val reviews: List<OwnerReviews>) :
+    RecyclerView.Adapter<OwnerRecycleAdapter.ViewHolder>() {
 
 
     val layoutInflater = LayoutInflater.from(context)
@@ -38,7 +38,7 @@ class ReviewsRecycleAdapter(val context: Context, val reviews: List<Reviews> ) :
         return reviews.size
     }
 
-    inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)   {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
         var reviewTextView = itemView.findViewById<TextView>(R.id.reviewTextView)
 
