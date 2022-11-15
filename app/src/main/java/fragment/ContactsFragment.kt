@@ -46,7 +46,7 @@ class ContactsFragment : Fragment() {
                 val fragment= MapsFragment()
                 fragment.arguments = bundle
                 fragmentManager?.beginTransaction()?.replace(R.id.fragment_container,fragment)?.commit()
-                Toast.makeText(context, "You clicked on user $clickedUserID",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "${userList[position].name.toString()}'s SmulltronStälle!",Toast.LENGTH_SHORT).show()
             }
         })
 
