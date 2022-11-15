@@ -41,6 +41,7 @@ class MapsFragment : Fragment() {
         mMap.isMyLocationEnabled = true
         mMap.uiSettings.isZoomControlsEnabled = true
 
+
 //These coordinates represent the lattitude and longitude of the It-Högskolan
 
         val stockholm = LatLng(59.31102, 18.02979)
