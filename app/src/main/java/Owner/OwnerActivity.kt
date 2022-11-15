@@ -13,9 +13,11 @@ import kotlinx.android.synthetic.main.activity_owner.*
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class OwnerActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_owner)
+        var nameText : String?
 
         val businessName = findViewById<EditText>(R.id.businessNameEditText)
         val businessNameButton = findViewById<Button>(R.id.businessNameBtn)
@@ -28,11 +30,11 @@ class OwnerActivity : AppCompatActivity() {
 
             businessName.setOnEditorActionListener(TextView.OnEditorActionListener { v, id, event ->
                 if (id == EditorInfo.IME_ACTION_DONE) {
-                    val nameText = businessName.text.toString()
+                    nameText = businessName.text.toString()
                     val intent = Intent(this, OwnerReviewsActivity::class.java)
                     intent.putExtra("businessName", nameText)
                     startActivity(intent)
-                    businessName.setText(null)
+                    businessName.setEnabled(false)
 
 
                     true
@@ -55,7 +57,9 @@ class OwnerActivity : AppCompatActivity() {
 
         val showReviewsBtn = findViewById<Button>(R.id.showReviewsBtn)
         showReviewsBtn.setOnClickListener {
+            nameText = businessName.text.toString()
             val intent = Intent(this, OwnerReviewsActivity::class.java)
+            intent.putExtra("businessName", nameText)
             startActivity(intent)
         }
 

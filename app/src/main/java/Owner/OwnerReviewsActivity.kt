@@ -85,13 +85,15 @@ class OwnerReviewsActivity : AppCompatActivity() {
                                 }
 
                         }
-
-
                 }
-                }
-
-
             }
+        for(user in reviews){
+
+
+        }
+
+
+    }
 
 
 
