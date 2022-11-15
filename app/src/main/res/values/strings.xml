@@ -14,5 +14,8 @@
     <string name="login_failed">"Login failed"</string>
 
     <string name="fragment_recycle">RecyckleFragment</string>
+    <string name="recension">Recension</string>
+    <string name="ditt_smultronst_lle">Ditt Smultronställe</string>
+    <string name="spara">Spara!</string>
 
 </resources>

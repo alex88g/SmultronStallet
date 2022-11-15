@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_review.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,10 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        cameraButton1.setOnClickListener{
-            val intentCamerar = Intent(this, CameraActivity::class.java)
-            startActivity(intentCamerar)
-        }
+
         replaceFragment(homeFragment)
 
         //PlaceList()
