@@ -9,11 +9,26 @@
 
 
     <Button
+        android:id="@+id/businessNameBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#75DDB2C1"
+        android:text="Företags Namn"
+        android:textColor="#DC648C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ownerSiteTextView" />
+
+    <Button
         android:id="@+id/logOutBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="30dp"
         android:backgroundTint="#75DDB2C1"
         android:text="Logga ut"
@@ -23,22 +38,21 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sendOfferBtn"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <Button
         android:id="@+id/showReviewsBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="30dp"
         android:backgroundTint="#75DDB2C1"
         android:text="Se recensioner"
         android:textColor="#DC648C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ownerSiteTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/businessNameBtn" />
 
     <Button
         android:id="@+id/sendOfferBtn"
@@ -63,7 +77,7 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="15dp"
         android:gravity="center"
-        android:text="Här kan du se dina recensioner och skicka erbjudanden till kunder!"
+        android:text="Här kan du se dina recensioner och skicka erbjudanden till kunder! \n\n Ange företagsnamn."
         android:textColor="#79DC648C"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,4 +101,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25" />
+
+    <EditText
+        android:id="@+id/businessNameEditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#CF4747"
+        android:textColorHighlight="#5A2020"
+        app:layout_constraintBottom_toBottomOf="@+id/businessNameBtn"
+        app:layout_constraintEnd_toEndOf="@+id/businessNameBtn"
+        app:layout_constraintStart_toStartOf="@+id/businessNameBtn"
+        app:layout_constraintTop_toTopOf="@+id/businessNameBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

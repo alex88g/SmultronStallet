@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -50,7 +51,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="Owner.OwnerActivity"
+            android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait">
             <meta-data
@@ -79,7 +80,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="Login.SignInActivity"
+            android:name="Owner.OwnerActivity"
             android:exported="false"
             android:screenOrientation="portrait">
             <meta-data
@@ -87,7 +88,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="Login.SignInActivity"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait">

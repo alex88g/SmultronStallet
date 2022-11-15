@@ -83,8 +83,8 @@ class MapsFragment : Fragment() {
                         //  val user = snapshot.toObject<User>()
                         Toast.makeText(
                             context,
-                            "inputData: $inputData name : $userName",
-                            Toast.LENGTH_SHORT
+                            "$userName's SmultronStällen!",
+                            Toast.LENGTH_LONG
                         )
                             .show()
 

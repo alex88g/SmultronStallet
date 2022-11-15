@@ -44,7 +44,7 @@ class UserAdapter(private val context: Context, val userList: ArrayList<User>) :
 
     class MyViewHolder(itemView: View,listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
 
-        var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
+        var nameTextView = itemView.findViewById<TextView>(R.id.userNameTextView)
         var phoneTextView = itemView.findViewById<TextView>(R.id.phoneTextView)
         var emailTextView = itemView.findViewById<TextView>(R.id.emailTextView)
 
