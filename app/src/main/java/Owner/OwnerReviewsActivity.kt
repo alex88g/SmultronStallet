@@ -16,10 +16,12 @@ import com.google.firebase.ktx.Firebase
 
 class OwnerReviewsActivity : AppCompatActivity() {
 
+
     val db = Firebase.firestore
     var userList = mutableListOf<User>()
     var reviews = mutableListOf<OwnerReviews>()
     lateinit var recyclerView: RecyclerView
+
 
 
 

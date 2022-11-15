@@ -2,7 +2,6 @@ package fragment
 
 import Maps.MapsPlace
 import android.annotation.SuppressLint
-import android.content.Intent.getIntent
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.*
@@ -17,7 +16,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.database.ktx.database
-import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -26,10 +24,12 @@ import java.util.*
 
 //This class allows you to interact with the map by adding markers, styling its appearance and
 // displaying the user's location.
+
 class MapsFragment : Fragment() {
     val db = Firebase.firestore
     val list = ArrayList<MapsPlace>()
     lateinit var mMap: GoogleMap
+
 
 
 
@@ -39,8 +39,11 @@ class MapsFragment : Fragment() {
 
 
         mMap.isMyLocationEnabled = true
+        mMap.uiSettings.isZoomControlsEnabled = true
+
 
 //These coordinates represent the lattitude and longitude of the It-Högskolan
+
         val stockholm = LatLng(59.31102, 18.02979)
         val zoomLevel = 15f
 

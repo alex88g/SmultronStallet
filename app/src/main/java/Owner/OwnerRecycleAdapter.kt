@@ -29,9 +29,11 @@ class OwnerRecycleAdapter(val context: Context, val reviews: List<OwnerReviews>)
         val review = reviews[position]
 
         // sätt in den personens uppgifter i vår view
+
         holder.nameTextView.text = review.userName
         holder.reviewTextView.text = review.userReview
         holder.emailTextView.text = review.userEmail
+
     }
 
 
@@ -40,6 +42,7 @@ class OwnerRecycleAdapter(val context: Context, val reviews: List<OwnerReviews>)
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    
         var nameTextView = itemView.findViewById<TextView>(R.id.userNameTextView)
         var reviewTextView = itemView.findViewById<TextView>(R.id.reviewTextView)
         var emailTextView = itemView.findViewById<TextView>(R.id.userEmailTextView)

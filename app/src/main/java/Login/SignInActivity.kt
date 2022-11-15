@@ -47,14 +47,15 @@ class SignInActivity : AppCompatActivity() {
 
         binding.OwnerSignin.setOnClickListener {
 
-            textView.setEnabled(false)
-            textView.setHint("")
-            textView.setText(null)
+            ownerTextView.setEnabled(false)
+            ownerTextView.setHint("")
+            ownerTextView.setText(null)
             BusinessTextView.setEnabled(false)
             BusinessTextView.setHint("")
             BusinessTextView.setText(null)
             buttonSignin.setText("Företag logga in")
-            wellcomeView.setText("Välkommen logga in till Smultronstället företag")
+            wellcomeView.setText("Välkommen till Smultronstället! \n Logga in på företagskonto här")
+
             emailEt.setHint("Företag e-post")
             passET.setHint("Lösenord")
             OwnerSignin.setBackgroundResource(android.R.color.transparent)
@@ -67,7 +68,7 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.textView.setOnClickListener {
+        binding.ownerTextView.setOnClickListener {
             val business: Boolean = false
             val intent = Intent(this, SignUpActivity::class.java)
             intent.putExtra("business", business)
