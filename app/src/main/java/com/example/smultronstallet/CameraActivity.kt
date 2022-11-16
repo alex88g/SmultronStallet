@@ -34,8 +34,8 @@ class CameraActivity : AppCompatActivity() {
 
         smultronPlats = smultronPlace1
         recenssion = ReviewS
-        locationGps1 = locationGps
-        bTagg = bussnestagg
+        //locationGps1 = locationGps
+        //bTagg = bussnestagg
         buttonSave = buttonSmultronSave
         val db = Firebase.firestore
         buttonSave.setOnClickListener {
