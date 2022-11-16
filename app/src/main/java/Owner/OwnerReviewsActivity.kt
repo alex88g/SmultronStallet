@@ -27,6 +27,7 @@ class OwnerReviewsActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     var emailString : String? = ""
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_owner_reviews)
@@ -49,9 +50,11 @@ class OwnerReviewsActivity : AppCompatActivity() {
                     Log.d("!!!","usermails: $userEmails")
                 }
                 Log.d("!!!","emailString : $emailString ")
-
+                val businessNameBack = intent.getStringExtra("businessName")
                 val intent = Intent(this@OwnerReviewsActivity, OwnerActivity::class.java)
                 intent.putExtra("emails", emailString)
+                intent.putExtra("businessnameexist",true)
+                intent.putExtra("businessname",businessNameBack)
                 startActivity(intent)
                 Toast.makeText(this@OwnerReviewsActivity, "Vill du skicka erbjudande?",
                     Toast.LENGTH_SHORT).show()
