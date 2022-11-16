@@ -80,7 +80,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="Owner.OwnerActivity"
+            android:name="Login.SignInActivity"
             android:exported="false"
             android:screenOrientation="portrait">
             <meta-data
@@ -88,7 +88,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="Login.SignInActivity"
+            android:name="Owner.OwnerActivity"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait">

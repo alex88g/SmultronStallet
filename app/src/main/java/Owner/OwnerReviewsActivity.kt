@@ -1,13 +1,17 @@
 package Owner
 
 
+import PlaceRecycleView.PlaceRecyclerAdapter
 import UserRecycleView.User
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.smultronstallet.MainActivity
 import com.example.smultronstallet.R
 
 import com.google.firebase.firestore.ktx.firestore
@@ -21,9 +25,7 @@ class OwnerReviewsActivity : AppCompatActivity() {
     var userList = mutableListOf<User>()
     var reviews = mutableListOf<OwnerReviews>()
     lateinit var recyclerView: RecyclerView
-
-
-
+    var emailString : String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,17 +35,37 @@ class OwnerReviewsActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.reviewsRecyclerView)
 
-
-
         var recyclerView = findViewById<RecyclerView>(R.id.reviewsRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // skapade vi en adapter från vår adapter-klass och skickar med vår lista av personer
         val adapter = OwnerRecycleAdapter(this, reviews)
-
-        // koppla ihop vår adapter med recyclerviewn
         recyclerView.adapter = adapter
+        adapter.setOnItemClickListener(object : OwnerRecycleAdapter.onItemClickListener {
+            override fun onItemClick(position: Int) {
+                for(user in reviews){
+                    val userEmails = "${emailString},${user.userEmail}"
+                    emailString = userEmails
 
+                    Log.d("!!!","usermails: $userEmails")
+                }
+                Log.d("!!!","emailString : $emailString ")
+
+                val intent = Intent(this@OwnerReviewsActivity, OwnerActivity::class.java)
+                intent.putExtra("emails", emailString)
+                startActivity(intent)
+                Toast.makeText(this@OwnerReviewsActivity, "Vill du skicka erbjudande?",
+                    Toast.LENGTH_SHORT).show()
+            }
+        })
+
+
+        for(user in reviews){
+            val userEmails = "${emailString},${user.userEmail}"
+            emailString = userEmails
+
+            Log.d("!!!","usermails: $userEmails")
+        }
+        Log.d("!!!","emailString : $emailString ")
 
 
     }
@@ -59,7 +81,7 @@ class OwnerReviewsActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                         for (document in it.result) {
                             val user = document.toObject<User>()
-                            Log.d("!!!", "${user.docId}")
+                            //Log.d("!!!", "${user.docId}")
                             userList.add(user)
                             db.collection("users")
                                 .document(user.docId!!)
@@ -67,9 +89,9 @@ class OwnerReviewsActivity : AppCompatActivity() {
                                 .get()
                                 .addOnCompleteListener {
                                     for(smultrons in it.result){
-                                        Log.d("!!!","buss $businessName")
+                                        //Log.d("!!!","buss $businessName")
                                         val smultronNamn = smultrons.data["name"].toString()
-                                        Log.d("!!!", "smul  $smultronNamn")
+                                        //Log.d("!!!", "smul  $smultronNamn")
                                         if(businessName == smultronNamn){
                                             val review = smultrons.data["review"].toString()
                                             reviews.add(OwnerReviews(
@@ -80,17 +102,19 @@ class OwnerReviewsActivity : AppCompatActivity() {
 
                                         }
 
+
                                     }
                                     recyclerView.adapter?.notifyDataSetChanged()
+
+
                                 }
 
                         }
+
+
                 }
             }
-        for(user in reviews){
 
-
-        }
 
 
     }
