@@ -40,6 +40,7 @@ class MapsFragment : Fragment() {
 
         mMap.isMyLocationEnabled = true
         mMap.uiSettings.isZoomControlsEnabled = true
+       
 
 
 //These coordinates represent the lattitude and longitude of the It-Högskolan
@@ -159,8 +160,14 @@ class MapsFragment : Fragment() {
             val poiMarker = map.addMarker(MarkerOptions().position(point.latLng).title(point.name))
             poiMarker!!.showInfoWindow()
         }
-
     }
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setHasOptionsMenu(true)
+
+        }
+
+
 
     //     Initializes contents of Activity's standard options menu. Only called the first time options
 //     menu is displayed.

@@ -21,7 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ownerSiteTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/ownerSiteTextView"
+        tools:ignore="DuplicateClickableBoundsCheck" />
 
     <Button
         android:id="@+id/logOutBtn"
@@ -114,5 +115,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/businessNameBtn"
         app:layout_constraintEnd_toEndOf="@+id/businessNameBtn"
         app:layout_constraintStart_toStartOf="@+id/businessNameBtn"
-        app:layout_constraintTop_toTopOf="@+id/businessNameBtn" />
+        app:layout_constraintTop_toTopOf="@+id/businessNameBtn"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

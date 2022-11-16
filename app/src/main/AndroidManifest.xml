@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -18,6 +17,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmultronStallet"
         tools:targetApi="31">
+
+        <activity
+            android:name="Login.SignInActivit"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name="PlaceRecycleView.PlaceRecycleActivity"
             android:exported="false"
@@ -51,7 +59,9 @@
                 android:value="" />
         </activity>
         <activity
+
             android:name=".CameraActivity"
+
             android:exported="false"
             android:screenOrientation="portrait">
             <meta-data
@@ -62,6 +72,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAk6BgqWNZ10FSN0kiU7CLeExG-F3kZFH0" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity
             android:name="Login.ForgotPasswordActivity"
@@ -88,7 +101,9 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="Login.SignInActivity"
+
+            android:name=".SmultronActivity"
+
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait">
