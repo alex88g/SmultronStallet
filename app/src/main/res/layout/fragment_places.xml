@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#75DDB2C1"
     tools:context="fragment.PlacesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -9,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#75DDB2C1"
+        android:backgroundTint="#75DDB2C1"
         tools:listitem="@layout/card_layout" />
 
 </FrameLayout>
