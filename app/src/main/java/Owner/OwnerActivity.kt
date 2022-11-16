@@ -48,10 +48,12 @@ class OwnerActivity : AppCompatActivity() {
             val intent = Intent(this, Login.SignInActivity::class.java)
             startActivity(intent)
         }
+        val emails = intent.getStringExtra("emails")
 
         val sendofferBtn = findViewById<Button>(R.id.sendOfferBtn)
         sendofferBtn.setOnClickListener {
             val intent = Intent(this, OwnerSendOfferActivity::class.java)
+            intent.putExtra("emails",emails)
             startActivity(intent)
         }
 
