@@ -39,7 +39,7 @@ class CameraActivity : AppCompatActivity(){
         cameraButton1 = findViewById(R.id.cameraButtonSmultron)
 
 
-    
+
 
         ButtonSave.setOnClickListener {
             var newSmultronPlace =
@@ -50,35 +50,25 @@ class CameraActivity : AppCompatActivity(){
                     finish()
                 }
 
-        smultronPlats = smultronPlace1
-        recenssion = ReviewS
-        //locationGps1 = locationGps
-        //bTagg = bussnestagg
-        buttonSave = buttonSmultronSave
-        val db = Firebase.firestore
-        buttonSave.setOnClickListener {
+            }
 
+            //  cameraButtonSmultron.setOnClickListener{
+            //val intentCamerar = Intent(this, CameraActivity::class.java)
+            //startActivity(intentCamerar)
+            //}
 
+            val takePicturesIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            if (takePicturesIntent.resolveActivity(this.packageManager) != null) {
+                startActivityForResult(takePicturesIntent, REQUEST_CODE)
 
-        }
+            } else {
+                Toast.makeText(this, "Unable to open camera", Toast.LENGTH_SHORT).show()
 
-        //  cameraButtonSmultron.setOnClickListener{
-        //val intentCamerar = Intent(this, CameraActivity::class.java)
-        //startActivity(intentCamerar)
-        //}
-
-        val takePicturesIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        if (takePicturesIntent.resolveActivity(this.packageManager) != null) {
-            startActivityForResult(takePicturesIntent, REQUEST_CODE)
-
-        } else {
-            Toast.makeText(this, "Unable to open camera", Toast.LENGTH_SHORT).show()
+            }
 
         }
 
-    }
-
-    /*  private fun getLocation() {
+        /*  private fun getLocation() {
           locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
           if ((ContextCompat.checkSelfPermission(
                   this,
@@ -95,17 +85,14 @@ class CameraActivity : AppCompatActivity(){
       }*/
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            val takenImage = data?.extras?.get("data") as Bitmap
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+                val takenImage = data?.extras?.get("data") as Bitmap
 
-            imageView.setImageBitmap(takenImage)
-        } else {
-            super.onActivityResult(requestCode, resultCode, data)
+                imageView.setImageBitmap(takenImage)
+            } else {
+                super.onActivityResult(requestCode, resultCode, data)
+            }
+
         }
-
     }
-
-
-
-}
