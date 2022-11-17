@@ -39,11 +39,7 @@ class CameraActivity : AppCompatActivity(){
         cameraButton1 = findViewById(R.id.cameraButtonSmultron)
 
 
-        1
-        cameraButton1.setOnClickListener{
-            val intentCamerar = Intent(this, CameraActivity::class.java)
-            startActivity(intentCamerar)
-        }
+    
 
         ButtonSave.setOnClickListener {
             var newSmultronPlace =
@@ -53,6 +49,15 @@ class CameraActivity : AppCompatActivity(){
                     Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
                     finish()
                 }
+
+        smultronPlats = smultronPlace1
+        recenssion = ReviewS
+        //locationGps1 = locationGps
+        //bTagg = bussnestagg
+        buttonSave = buttonSmultronSave
+        val db = Firebase.firestore
+        buttonSave.setOnClickListener {
+
 
 
         }
