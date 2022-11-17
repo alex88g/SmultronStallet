@@ -73,7 +73,7 @@ class ReviewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        cameraButton1.setOnClickListener {
+        cameraButtonSmultron.setOnClickListener {
             val intentCamerar = Intent(activity, CameraActivity::class.java)
             startActivity(intentCamerar)
         }
