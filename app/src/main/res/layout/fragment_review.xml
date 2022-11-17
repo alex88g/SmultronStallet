@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#75DDB2C1"
     android:backgroundTint="#75DDB2C1"
+    android:background="@drawable/smul_back"
     tools:context=".CameraActivity">
 
 
@@ -16,73 +16,46 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:src="@mipmap/ic_launcher"
+        android:contextClickable="false"
+        android:src="@drawable/dittsmultronstalle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/cameraButton1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_camera"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/smultronPlace1"
+        android:id="@+id/DittsmultronPlace1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="5dp"
-        android:hint="Ditt Smultronställe:"
+        android:background="#75DDB2C1"
+        android:gravity="center"
+        android:hint="Ditt smultronStälle"
+        android:textColorHint="#FAF8F8"
         app:layout_constraintBottom_toTopOf="@+id/ReviewS"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cameraButtonSmultron"
         tools:ignore="TouchTargetSizeCheck" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/ReviewS"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="351dp"
+        android:layout_height="74dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="5dp"
-        android:hint="Recension:"
-        app:layout_constraintBottom_toTopOf="@+id/locationGps"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/locationGps"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="5dp"
-        android:hint="Adress:"
-        app:layout_constraintBottom_toTopOf="@+id/bussnestagg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/bussnestagg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
-        android:hint="Företagstag:"
+        android:layout_marginBottom="32dp"
+        android:background="#75DDB2C1"
+        android:gravity="center"
+        android:hint="Recension"
+        android:textColorHint="#FAF8F8"
         app:layout_constraintBottom_toTopOf="@+id/buttonSmultronSave"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DittsmultronPlace1"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
@@ -90,14 +63,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="11dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#75DDB2C1"
         android:text="Spara!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ReviewS"
         tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/cameraButtonSmultron"
+        android:layout_width="53dp"
+        android:layout_height="49dp"
+        app:layout_constraintBottom_toTopOf="@+id/DittsmultronPlace1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
